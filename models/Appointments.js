@@ -10,20 +10,35 @@ User.init(
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
+        // Dates/time (Should be able to pass in both date and time)
+        // https://sebhastian.com/sequelize-date-format/
         },
-        // User Name
-        name: {
+        date: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        // Login info
-        email: {
-            type: DataTypes.STRING,
+        // Cost of appointment
+        cost: {
+            type: DataTypes.DECIMAL,
             allowNull: false,
         },
-        password: {
+        // Patient seen
+        client_name: {
             type: DataTypes.STRING,
             allowNull: false,
+                references: {
+                    model: 'user',
+                    key: 'id',
+                }
+        },
+        // Provider seen
+        provider_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            references: {
+                model: 'admin',
+                key: 'id',
+            }
         },
     },
     {
@@ -31,7 +46,7 @@ User.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user',
+        modelName: 'appointments',
     }
 );
 
