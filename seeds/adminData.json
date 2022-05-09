@@ -1,8 +1,12 @@
 [
     {
-      "name": "Sal",
-      "email": "sal@hotmail.com",
-      "password": "password12345"
+      "title": "Doctor",
+      "name": "sal@hotmail.com",
+      "email": "",
+      "password": "password12345",
+      "appointment_date": "",
+      "client_name": "",
+      "cost": 40
     },
     {
       "name": "Lernantino",

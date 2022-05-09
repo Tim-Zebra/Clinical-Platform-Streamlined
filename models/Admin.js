@@ -35,7 +35,7 @@ Admin.init(
       type: DataTypes.DATE,
     },
     // Who they saw
-    user_name: {
+    client_name: {
         type: DataTypes.STRING,
     },
     // Cost of appointment

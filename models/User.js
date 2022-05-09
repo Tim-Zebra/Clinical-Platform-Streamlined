@@ -31,7 +31,7 @@ User.init(
             allowNull: false,
         },
         // Who was seen
-        admin_name: {
+        provider_name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
