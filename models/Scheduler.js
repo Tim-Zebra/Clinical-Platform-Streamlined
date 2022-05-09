@@ -21,6 +21,11 @@ Schedule.init(
       allowNull: false,
     },
 
+    doctor_id: {
+      type: DataTypes.NUM,
+      allowNull:false
+    },
+
     appointment_start: {
       type: DataTypes.DATE,
       allowNull: false,
