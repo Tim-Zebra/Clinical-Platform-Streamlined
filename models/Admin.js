@@ -29,19 +29,6 @@ Admin.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // Dates/time (Should be able to pass in both date and time)
-    // https://sebhastian.com/sequelize-date-format/
-    appointment_date: {
-      type: DataTypes.DATE,
-    },
-    // Who they saw
-    client_name: {
-        type: DataTypes.STRING,
-    },
-    // Cost of appointment
-    cost: {
-      type: DataTypes.FLOAT,
-    },
   },
   {
     sequelize,

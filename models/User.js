@@ -24,31 +24,14 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        // Dates/time (Should be able to pass in both date and time)
-        // https://sebhastian.com/sequelize-date-format/
-        appointment_date: {
-            type: DataTypes.DATE,
-            allowNull: false,
-        },
-        // Who was seen
-        provider_name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        // Cost of appointment
-        cost: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-        },
-
     },
-  {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'user',
-  }
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'user',
+    }
 );
 
 module.exports = User;
