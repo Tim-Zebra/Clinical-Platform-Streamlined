@@ -13,8 +13,8 @@ User.init(
         // Dates/time (Should be able to pass in both date and time)
         // https://sebhastian.com/sequelize-date-format/
         },
-        appointment_date: {
-            type: DataTypes.DATE,
+        date: {
+            type: DataTypes.STRING,
             allowNull: false,
         },
         // Cost of appointment
