@@ -17,12 +17,17 @@ User.init(
             type: DataTypes.DATE,
             allowNull: false,
         },
+        // Cost of appointment
+        cost: {
+            type: DataTypes.DECIMAL,
+            allowNull: false,
+        },
         // Patient seen
         client_name: {
             type: DataTypes.STRING,
             allowNull: false,
                 references: {
-                    model: 'User',
+                    model: 'user',
                     key: 'id',
                 }
         },
@@ -31,14 +36,9 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
             references: {
-                model: 'Admin',
+                model: 'admin',
                 key: 'id',
             }
-        },
-        // Cost of appointment
-        cost: {
-            type: DataTypes.DECIMAL,
-            allowNull: false,
         },
     },
     {

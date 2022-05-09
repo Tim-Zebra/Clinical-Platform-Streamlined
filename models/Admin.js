@@ -21,6 +21,7 @@ Admin.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    // login
     email: {
       type: DataTypes.STRING,
       allowNull: false,
