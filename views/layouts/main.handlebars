@@ -1,45 +1,66 @@
+{{!-- This is the main landing page --}}
+{{!-- Redirect if logged in --}}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fund My Project!</title>
-  <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psy MD. Login</title>
+    <link rel="stylesheet" href="/css/jass.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Project!</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">Patient login</a>
-        <a href="/adminlogin">Admin login</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
+    <main>
+        <h1>HEADER</h1>
+        <div class="row">
+             {{!-- patient login --}}
+            <div class="col-md-6">
+                <h2>Patient portal</h2>
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+                <form class="form login-form">
+                <div class="form-group">
+                    <label for="email-login">email:</label>
+                    <input class="form-input" type="text" id="email-login" />
+                </div>
+                <div class="form-group">
+                    <label for="password-login">password:</label>
+                    <input class="form-input" type="password" id="password-login" />
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit">login</button>
+                </div>
+                </form>
+
+            </div>
+
+            {{!-- admin login --}}
+            <div class="col-md-6">
+                <h2>Admin Portal</h2>
+
+                <form class="form login-form">
+                    <div class="form-group">
+                        <label for="email-login">email:</label>
+                        <input class="form-input" type="text" id="email-login" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password-login">password:</label>
+                        <input class="form-input" type="password" id="password-login" />
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">login</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </main>
+
+        <footer>Clincal Psych. updated 2022</footer>
 </body>
 
-</html>
+
+
+<html>
+{{!-- Log in for either admin or patient --}}
+
