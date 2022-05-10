@@ -1,13 +1,13 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Schedule extends Model {
+class Scheduler extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
 
-Schedule.init(
+Scheduler.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -58,4 +58,4 @@ Schedule.init(
   }
 );
 
-module.exports = Schedule;
+module.exports = Scheduler;
