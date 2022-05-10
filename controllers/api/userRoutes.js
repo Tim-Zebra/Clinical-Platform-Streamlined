@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+var bcrypt = require('bcrypt');
 
 router.post('/', async (req, res) => {
   try {
@@ -21,15 +22,17 @@ router.post('/login', async (req, res) => {
     const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
+      
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
       return;
     }
 
-    const validPassword = await userData.checkPassword(req.body.password);
+    const validPassword = await userData.password === req.body.password;
 
     if (!validPassword) {
+      alert('USERDATA is false!');
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
@@ -45,6 +48,7 @@ router.post('/login', async (req, res) => {
 
   } catch (err) {
     res.status(400).json(err);
+    console.log(err);
   }
 });
 
