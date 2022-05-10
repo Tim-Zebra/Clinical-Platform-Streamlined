@@ -16,7 +16,13 @@ const hbs = exphbs.create({ helpers });
 
 const sess = {
   secret: 'Super secret secret',
-  cookie: {},
+  cookie: {
+    // maxAge expires after 1 hour. After 1 hour the admin/user will have to log in again.
+    maxAge: 3600000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
