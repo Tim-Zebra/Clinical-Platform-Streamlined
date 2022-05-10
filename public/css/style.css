@@ -1,5 +1,6 @@
 footer {
-position: absolute;
+/* Sends footer to the bottom and centers*/
+  position: absolute;
 bottom: 0;
 width: 100%;
 text-align: center;
