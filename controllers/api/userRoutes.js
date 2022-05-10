@@ -2,6 +2,25 @@ const router = require('express').Router();
 const { User } = require('../../models');
 var bcrypt = require('bcrypt');
 
+router.get('/dashboard',(req, res) => {
+  // try {
+  //   // Find the logged in user based on the session ID
+  //   const userData = await User.findByPk(req.session.user_id, {
+  //     attributes: { exclude: ['password'] },
+  //     include: [{ model: Project }],
+  //   });
+
+  //   const user = userData.get({ plain: true });
+
+    res.render('userprofile', 
+    // {...user,
+    //   logged_in: true}
+      );
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
+});
+
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -32,7 +51,7 @@ router.post('/login', async (req, res) => {
     const validPassword = await userData.password === req.body.password;
 
     if (!validPassword) {
-      alert('USERDATA is false!');
+      
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
@@ -61,5 +80,7 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
+
 
 module.exports = router;

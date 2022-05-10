@@ -20,9 +20,10 @@ console.log(response);
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
-      document.location.replace('/profile');
+      document.location.replace('/api/users/dashboard');
     } else {
-      alert(response.statusText);
+      // look into Toast instead of Alert
+      alert("You have entered the wrong email or password!");
     }
   }
 };
@@ -42,7 +43,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/api/users/profile');
     } else {
       alert(response.statusText);
     }

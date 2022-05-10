@@ -1,6 +1,25 @@
 const router = require('express').Router();
 const { Admin } = require('../../models');
 
+router.get('/dashboard',(req, res) => {
+  // try {
+    // Find the logged in user based on the session ID
+    // const userData = await User.findByPk(req.session.user_id, {
+    //   attributes: { exclude: ['password'] },
+    //   include: [{ model: Project }],
+    // });
+
+    // const user = userData.get({ plain: true });
+
+    res.render('adminprofile', 
+    // { ...user,
+    //   logged_in: true}
+      );
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
+});
+
 // router.post('/', async (req, res) => {
 //   try {
 //     const userData = await Admin.create(req.body);
@@ -19,6 +38,7 @@ const { Admin } = require('../../models');
 router.post('/login', async (req, res) => {
   try {
     const userData = await Admin.findOne({ where: { email: req.body.email } });
+    console.log(userData);
 
     if (!userData) {
       res
@@ -27,7 +47,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    const validPassword = await userData.checkPassword(req.body.password);
+    const validPassword = await userData.password === req.body.password;
 
     if (!validPassword) {
       res
@@ -58,4 +78,24 @@ router.post('/logout', (req, res) => {
   }
 });
 
+router.get('/dashboard',(req, res) => {
+  // try {
+    // Find the logged in user based on the session ID
+    // const userData = await User.findByPk(req.session.user_id, {
+    //   attributes: { exclude: ['password'] },
+    //   include: [{ model: Project }],
+    // });
+
+    // const user = userData.get({ plain: true });
+
+    res.render('adminlogin', 
+    // { ...user,
+    //   logged_in: true}
+      );
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
+});
+
 module.exports = router;
+
