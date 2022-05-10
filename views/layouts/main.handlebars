@@ -2,18 +2,20 @@
 {{!-- Redirect if logged in --}}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Psy MD. Login</title>
-        <link rel="stylesheet" href="/css/jass.css">
-        <link rel="stylesheet" href="/css/style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psy MD. Login</title>
+    <link rel="stylesheet" href="/css/jass.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
 
-    <body>
+<body>
+    <main>
+        <h1>HEADER</h1>
         <div class="row">
+             {{!-- patient login --}}
             <div class="col-md-6">
-                {{!-- patient login --}}
                 <h2>Patient portal</h2>
 
                 <form class="form login-form">
@@ -37,24 +39,27 @@
                 <h2>Admin Portal</h2>
 
                 <form class="form login-form">
-                <div class="form-group">
-                    <label for="email-login">email:</label>
-                    <input class="form-input" type="text" id="email-login" />
-                </div>
-                <div class="form-group">
-                    <label for="password-login">password:</label>
-                    <input class="form-input" type="password" id="password-login" />
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-primary" type="submit">login</button>
-                </div>
+                    <div class="form-group">
+                        <label for="email-login">email:</label>
+                        <input class="form-input" type="text" id="email-login" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password-login">password:</label>
+                        <input class="form-input" type="password" id="password-login" />
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">login</button>
+                    </div>
                 </form>
 
             </div>
         </div>
-    </body>
+    </main>
 
-    <footer>Clinical Psychiatry updated 2022</footer>
+        <footer>Clincal Psych. updated 2022</footer>
+</body>
+
+
 
 <html>
 {{!-- Log in for either admin or patient --}}
