@@ -14,24 +14,22 @@
     <main>
         <h1>HEADER</h1>
         <div class="row">
-             {{!-- patient login --}}
+             {{!-- user login --}}
             <div class="col-md-6">
                 <h2>Patient portal</h2>
-
                 <form class="form login-form">
-                <div class="form-group">
-                    <label for="email-login">email:</label>
-                    <input class="form-input" type="text" id="email-login" />
-                </div>
-                <div class="form-group">
-                    <label for="password-login">password:</label>
-                    <input class="form-input" type="password" id="password-login" />
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-primary" type="submit">login</button>
-                </div>
+                    <div class="form-group">
+                        <label for="email-login">email:</label>
+                        <input class="form-input" type="text" id="user-email-login" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password-login">password:</label>
+                        <input class="form-input" type="password" id="user-password-login" />
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit" id="user-button">login</button>
+                    </div>
                 </form>
-
             </div>
 
             {{!-- admin login --}}
@@ -41,26 +39,25 @@
                 <form class="form login-form">
                     <div class="form-group">
                         <label for="email-login">email:</label>
-                        <input class="form-input" type="text" id="email-login" />
+                        <input class="form-input" type="text" id="admin-email-login" />
                     </div>
                     <div class="form-group">
                         <label for="password-login">password:</label>
-                        <input class="form-input" type="password" id="password-login" />
+                        <input class="form-input" type="password" id="admin-password-login" />
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-primary" type="submit">login</button>
+                        <button class="btn btn-primary" type="submit" id="admin-button">login</button>
                     </div>
                 </form>
-
             </div>
         </div>
     </main>
 
-        <footer>Clincal Psych. updated 2022</footer>
+    <footer class="footer flex-row justify-center">Clincal Psych. updated 2022</footer>
+
+    {{!-- JS scripts: JS --}}
+    <script src="/js/login.js"></script>
 </body>
-
-
-
 <html>
 {{!-- Log in for either admin or patient --}}
 
