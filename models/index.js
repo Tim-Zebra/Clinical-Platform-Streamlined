@@ -1,8 +1,8 @@
 const Admin = require('./Admin');
 const Appointment = require('./Appointment');
-// const Category = require('./Category');
-// const Pharma = require('./Pharma');
-// const Scheduler = require('./Scheduler');
+const Category = require('./Category');
+const Pharma = require('./Pharma');
+const Scheduler = require('./Scheduler');
 const User = require('./User');
 
 // These are linked by when admin and user interacted, denoted by the Model Appointments
@@ -25,8 +25,8 @@ User.belongsToMany(Admin, {
 module.exports = { 
   Admin,
   Appointment,
-  // Category,
-  // Pharma,
-  // Scheduler,
+  Category,
+  Pharma,
+  Scheduler,
   User};
 
