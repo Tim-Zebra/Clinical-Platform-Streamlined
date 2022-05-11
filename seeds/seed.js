@@ -8,7 +8,12 @@ const appointmentData = require('./appointmentData.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const users = await User.bulkCreate(userData, {
+  const appointment = await Appointment.bulkCreate(appointmentData, {
+    individualHooks: true,
+    returning: true,
+  });
+  
+  const user = await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
   });
@@ -18,10 +23,6 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  const appointments = await Appointment.bulkCreate(appointmentData, {
-    individualHooks: true,
-    returning: true,
-  });
 
   process.exit(0);
 };

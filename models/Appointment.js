@@ -7,9 +7,9 @@ Appointment.init(
     {
         id: {
             type: DataTypes.INTEGER,
+            unique: true,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true,
         // Dates/time (Should be able to pass in both date and time)
         // https://sebhastian.com/sequelize-date-format/
         },
@@ -24,33 +24,33 @@ Appointment.init(
             unique: false,
             allowNull: false,
         },
-        // Patient seen
-        user_id: {
-            type: DataTypes.INTEGER,
-            unique: false,
-            allowNull: false,
-                references: {
-                    model: 'user',
-                    key: 'id',
-                }
-        },
-        // Provider seen
-        admin_id: {
-            type: DataTypes.INTEGER,
-            unique: false,
-            allowNull: false,
-            references: {
-                model: 'admin',
-                key: 'id',
-            }
-        },
+        // // // Patient seen
+        // user_id: {
+        //     type: DataTypes.INTEGER,
+        //     unique: false,
+        //     allowNull: false,
+        //         references: {
+        //             model: 'user',
+        //             key: 'id',
+        //         }
+        // },
+        // // // Provider seen
+        // admin_id: {
+        //     type: DataTypes.INTEGER,
+        //     unique: false,
+        //     allowNull: false,
+        //     references: {
+        //         model: 'admin',
+        //         key: 'id',
+        //     }
+        // },
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'appointments',
+        modelName: 'appointment',
     }
 );
 

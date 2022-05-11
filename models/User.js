@@ -8,13 +8,12 @@ User.init(
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            unique: true,
+            unique: false,
             primaryKey: true,
         },
         // User Name
         name: {
             type: DataTypes.STRING,
-            unique: false,
             allowNull: false,
         },
         // Login info
@@ -24,8 +23,14 @@ User.init(
         },
         password: {
             type: DataTypes.STRING,
-            unique: false,
             allowNull: false,
+        },
+        appt_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'appointment',
+              key: 'id',
+            },
         },
     },
     {

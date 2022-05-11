@@ -8,19 +8,17 @@ Admin.init(
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      unique: true,
+      unique: false,
       primaryKey: true,
     },
     // Doctor, tech-admin, receptionist
     title: {
       type: DataTypes.STRING,
-      unique: false,
       allowNull: false,
     },
     // Admin Name
     name: {
       type: DataTypes.STRING,
-      unique: false,
       allowNull: false,
     },
     // login
@@ -30,9 +28,15 @@ Admin.init(
     },
     password: {
       type: DataTypes.STRING,
-      unique: false,
       allowNull: false,
     },
+    appt_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'appointment',
+        key: 'id',
+      },
+    }
   },
   {
     sequelize,

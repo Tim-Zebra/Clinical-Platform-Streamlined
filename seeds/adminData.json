@@ -4,14 +4,16 @@
         "title": "Doctor",
         "name": "Arthur",
         "email": "arthur@clinic.com",
-        "password": "password1"
+        "password": "password1",
+        "appt_id": "1"
     },
     {
         "id": 2,
         "title": "Doctor",
         "name": "Lance",
         "email": "lance@clinic.com",
-        "password": "password2"
+        "password": "password2",
+        "appt_id": "2"
     },
     {
         "id": 3,
