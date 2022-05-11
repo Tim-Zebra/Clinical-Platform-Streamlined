@@ -1,8 +1,9 @@
 const sequelize = require('../config/connection');
-const { User, Admin } = require('../models');
+const { User, Admin, Appointment } = require('../models');
 
 const userData = require('./userData.json');
 const adminData = require('./adminData.json');
+const appointmentData = require('./appointmentData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -13,6 +14,11 @@ const seedDatabase = async () => {
   });
 
   const admin = await Admin.bulkCreate(adminData, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  const appointments = await Appointment.bulkCreate(appointmentData, {
     individualHooks: true,
     returning: true,
   });

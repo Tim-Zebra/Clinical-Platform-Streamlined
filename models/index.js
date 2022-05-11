@@ -1,5 +1,5 @@
 const Admin = require('./Admin');
-// const Appointment = require('./Appointment');
+const Appointment = require('./Appointment');
 // const Category = require('./Category');
 // const Pharma = require('./Pharma');
 // const Scheduler = require('./Scheduler');
@@ -24,7 +24,7 @@ const User = require('./User');
 
 module.exports = { 
   Admin,
-  // Appointment,
+  Appointment,
   // Category,
   // Pharma,
   // Scheduler,

@@ -23,8 +23,8 @@ Appointment.init(
             allowNull: false,
         },
         // Patient seen
-        client_name: {
-            type: DataTypes.STRING,
+        user_id: {
+            type: DataTypes.INTEGER,
             allowNull: false,
                 references: {
                     model: 'user',
@@ -32,8 +32,8 @@ Appointment.init(
                 }
         },
         // Provider seen
-        provider_name: {
-            type: DataTypes.STRING,
+        admin_id: {
+            type: DataTypes.INTEGER,
             allowNull: false,
             references: {
                 model: 'admin',
