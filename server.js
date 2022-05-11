@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ helpers });
 
 const sess = {
-  secret: 'Super secret secret',
+  secret: process.env.SECRET,
   cookie: {
     // maxAge expires after 1 hour. After 1 hour the admin/user will have to log in again.
     maxAge: 3600000,
