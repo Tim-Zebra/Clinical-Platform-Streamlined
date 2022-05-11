@@ -1,17 +1,20 @@
 [
     {
+        "id": 1,
         "title": "Doctor",
         "name": "Arthur",
         "email": "arthur@clinic.com",
         "password": "password1"
     },
     {
+        "id": 2,
         "title": "Doctor",
         "name": "Lance",
         "email": "lance@clinic.com",
         "password": "password2"
     },
     {
+        "id": 3,
         "title": "Secretary",
         "name": "Patsy",
         "email": "patsy@clinic.com",
