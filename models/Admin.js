@@ -10,7 +10,6 @@ Admin.init(
       allowNull: false,
       unique: true,
       primaryKey: true,
-      autoIncrement: true,
     },
     // Doctor, tech-admin, receptionist
     title: {

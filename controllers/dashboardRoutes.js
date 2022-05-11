@@ -16,35 +16,34 @@ router.get('/admin', async (req, res) => {
 
 // Test Code View Dashboard for specific Admin
 router.get('/admin/:id', async (req, res) => {
-
+// gets all associated users (patients), as well as associated appointment times.
   try {
     const adminData = await Admin.findByPk(req.params.id, {
+      // excludes unnecessary data
+      attributes: {
+        exclude: ['email', 'password'],
+      },
+      // includes user name, id, appointment cost, appointment date.
       include: [
-        // {
-        //   attributes: ['title', 'name', 'id'],
-        // },
         { 
           model: User,
           attributes: ['name'],
         },
       ],
-      // exclude: [ 
-      //   {
-      //     model: Admin,
-      //     attributes: ['email', 'password'],
-      //   }
-      // ],
     });
 
     // Gets data for single admin
     const admin = adminData.get({ plain: true });
 
+    // Uncomment to see admin json response in Insomnia
     res.json(admin);
+
+    // Comment out res.render if sending multiple requests to Insomnia
     // Passes post and session status to mustache
-    res.render('admin-main', {
-      layout: 'dashboard',
-      // logged_in: req.session.loggedIn
-    });
+    // res.render('admin-main', {
+    //   layout: 'dashboard',
+    //   // logged_in: req.session.loggedIn
+    // });
   } catch (err) {
     res.status(500).json(err);
   }
