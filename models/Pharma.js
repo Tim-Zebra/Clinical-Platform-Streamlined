@@ -49,4 +49,4 @@ Pharma.init(
   }
 );
 
-module.exports = Product;
+module.exports = Pharma;
