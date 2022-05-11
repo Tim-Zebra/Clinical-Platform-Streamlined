@@ -1,23 +1,20 @@
 [
-  {
-      "id": 1,
-      "name": "Roger",
-      "email": "roger@hotmail.com",
-      "password": "roger1",
-      "appt_id": "1"
-  },
-  {
-      "id": 2,
-      "name": "Zoot",
-      "email": "zoot@aol.com",
-      "password": "zoot1",
-      "appt_id": "2"
-  },
-  {
-      "id": 3,
-      "name": "Denis",
-      "email": "denis@gmail.com",
-      "password": "denis1",
-      "appt_id": "3"
-  }
+    {
+        "id": 1,
+        "name": "Roger",
+        "email": "roger@hotmail.com",
+        "password": "roger1"
+    },
+    {
+        "id": 2,
+        "name": "Zoot",
+        "email": "zoot@aol.com",
+        "password": "zoot1"
+    },
+    {
+        "id": 3,
+        "name": "Denis",
+        "email": "denis@gmail.com",
+        "password": "denis1"
+    }
 ]

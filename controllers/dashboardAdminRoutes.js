@@ -4,18 +4,21 @@ const { sequelize } = require('../models/User');
 
 const withAuth = require('../utils/auth');
 
-// The `/dashboard` endpoint
+// The `/dashboard/admin` endpoint
 
-// Test Code View Dashboard for specific Admin
+// Leave this for testing purposes. Will use /:id when deploying
+router.get('/', async (req, res) => {
+     res.render('admin-main', {
+       layout: 'dashboard',
+     });
+});
+
+
+// Routes to admin at specific ID
 router.get('/:id', async (req, res) => {
 // gets all associated users (patients), as well as associated appointment times.
   try {
     const apptData = await Appointment.findByPk(req.params.id, {
-      // excludes unnecessary data
-      // attributes: {
-      //   exclude: ['email', 'password'],
-      // },
-      // includes user: name, id, appointment cost, appointment date.
       include: [
         {
           model: Admin,
@@ -33,14 +36,15 @@ router.get('/:id', async (req, res) => {
     });
 
     // Gets data for single admin
-    const admin = apptData.get({ plain: true });
+    const appt = apptData.get({ plain: true });
     // Uncomment to see admin json response in Insomnia
-    res.json(admin);
+    res.json(appt);
 
     // Comment out res.render if sending multiple requests to Insomnia
     // Passes post and session status to mustache
     // res.render('admin-main', {
     //   layout: 'dashboard',
+    //   appt,
     //   // logged_in: req.session.loggedIn
     // });
   } catch (err) {

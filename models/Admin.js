@@ -30,13 +30,6 @@ Admin.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    appt_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'appointment',
-        key: 'id',
-      },
-    }
   },
   {
     sequelize,

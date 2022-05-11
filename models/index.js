@@ -5,38 +5,23 @@ const Appointment = require('./Appointment');
 // const Scheduler = require('./Scheduler');
 const User = require('./User');
 
-// // These are linked by when admin and user interacted, denoted by the Model Appointments
-// Admin.belongsToMany(User, {
-//   through: {
-//     model: Appointment,
-//     unique: false,
-//   },
-//   foreignKey: 'admin_id',
-// });
+// Links users with appointment
+// User.belongsTo(Appointment, {
+//   foreignKey: 'user_id',
+// })
 
-// User.belongsToMany(Admin, {
-//   through: {
-//     model: Appointment,
-//     unique: false,
-//   },
+// Appointment.hasOne(User, {
 //   foreignKey: 'user_id',
 // });
 
-User.belongsTo(Appointment, {
-  foreignKey: 'appt_id',
-})
+// // Links admin with appointments
+// // Admin.belongsTo(Appointment, {
+// //   foreignKey: 'admin_id',
+// // })
 
-Appointment.hasOne(User, {
-  foreignKey: 'appt_id',
-});
-
-Admin.belongsTo(Appointment, {
-  foreignKey: 'appt_id',
-})
-
-Appointment.hasOne(Admin, {
-  foreignKey: 'appt_id',
-});
+// Appointment.hasOne(Admin, {
+//   foreignKey: 'admin_id',
+// });
 
 module.exports = { 
   Admin,

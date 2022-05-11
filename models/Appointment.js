@@ -25,25 +25,25 @@ Appointment.init(
             allowNull: false,
         },
         // // // Patient seen
-        // user_id: {
-        //     type: DataTypes.INTEGER,
-        //     unique: false,
-        //     allowNull: false,
-        //         references: {
-        //             model: 'user',
-        //             key: 'id',
-        //         }
-        // },
-        // // // Provider seen
-        // admin_id: {
-        //     type: DataTypes.INTEGER,
-        //     unique: false,
-        //     allowNull: false,
-        //     references: {
-        //         model: 'admin',
-        //         key: 'id',
-        //     }
-        // },
+        user_id: {
+            type: DataTypes.INTEGER,
+            unique: false,
+            allowNull: false,
+                references: {
+                    model: 'user',
+                    key: 'id',
+                }
+        },
+        // // Provider seen
+        admin_id: {
+            type: DataTypes.INTEGER,
+            unique: false,
+            allowNull: false,
+            references: {
+                model: 'admin',
+                key: 'id',
+            }
+        },
     },
     {
         sequelize,
