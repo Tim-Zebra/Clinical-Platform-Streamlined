@@ -19,21 +19,22 @@ router.get('/admin/:id', async (req, res) => {
 
   try {
     const adminData = await Admin.findByPk(req.params.id, {
-      // include: [
-      //   { 
-      //     model: User,
-      //     attributes: ['name'],
-      //   },
-      //   {
-      //     model: Appointment,
-      //     attributes: ['date', 'cost'],
-      //   },
-      // ],
+      include: [
+        { 
+          model: User,
+          attributes: ['name'],
+        },
+        // {
+        //   model: Appointment,
+        //   attributes: ['date', 'cost'],
+        // },
+      ],
     });
 
     // Gets data for single admin
     const admin = adminData.get({ plain: true });
-console.log('\x1b[36m', '\n\n----------------Dashboard Route Admin-------------------\n\n', admin, '\x1b[37m');
+
+    res.json(admin);
     // Passes post and session status to mustache
     res.render('admin-main', {
       layout: 'dashboard',
