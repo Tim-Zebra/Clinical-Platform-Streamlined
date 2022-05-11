@@ -7,6 +7,7 @@ router.get('/', async (req, res) => {
 res.render('homepage')
 });
 
+<<<<<<< HEAD
 router.get('/project/:id', async (req, res) => {
   try {
     const projectData = await Project.findByPk(req.params.id, {
@@ -87,5 +88,7 @@ router.get('/adminlogin', (req, res) => {
 
   res.render('adminlogin');
 });
+=======
+>>>>>>> 5934ec8314cad7a140c6c2f3d0576ab257439d70
 
 module.exports = router;
