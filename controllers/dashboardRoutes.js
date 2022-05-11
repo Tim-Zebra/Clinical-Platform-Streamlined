@@ -16,18 +16,19 @@ router.get('/admin', async (req, res) => {
 
 // Test Code View Dashboard for specific Admin
 router.get('/admin/:id', async (req, res) => {
+
   try {
-    const adminData = await Admin.findAll(req.params.id, {
-      include: [
-        { 
-          model: User,
-          attributes: ['name'],
-        },
-        {
-          model: Appointment,
-          attributes: ['date', 'cost'],
-        },
-      ],
+    const adminData = await Admin.findByPk(req.params.id, {
+      // include: [
+      //   { 
+      //     model: User,
+      //     attributes: ['name'],
+      //   },
+      //   {
+      //     model: Appointment,
+      //     attributes: ['date', 'cost'],
+      //   },
+      // ],
     });
 
     // Gets data for single admin
