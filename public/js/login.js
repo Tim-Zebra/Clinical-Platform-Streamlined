@@ -22,7 +22,7 @@ console.log(response);
       // If successful, redirect the browser to the profile page
       document.location.replace('/dashboard/user');
     } else {
-      alert(response.statusText);
+      alert("Login not succesful");
     }
   }
 };
