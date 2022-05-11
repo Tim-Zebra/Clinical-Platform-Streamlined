@@ -23,18 +23,18 @@ const User = require('./User');
 // });
 
 User.belongsTo(Appointment, {
-  foreignKey: 'appt_id'
+  foreignKey: 'appt_id',
 })
 
-Appointment.hasMany(User, {
+Appointment.hasOne(User, {
   foreignKey: 'appt_id',
 });
 
 Admin.belongsTo(Appointment, {
-  foreignKey: 'appt_id'
+  foreignKey: 'appt_id',
 })
 
-Appointment.hasMany(Admin, {
+Appointment.hasOne(Admin, {
   foreignKey: 'appt_id',
 });
 
