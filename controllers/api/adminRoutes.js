@@ -20,6 +20,7 @@ router.post('/login', async (req, res) => {
   try {
     const userData = await Admin.findOne({ where: { email: req.body.email } });
 
+    console.log(userData);
     if (!userData) {
       res
         .status(400)
@@ -27,7 +28,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    const validPassword = await userData.checkPassword(req.body.password);
+    const validPassword = await userData.password === req.body.password;
 
     if (!validPassword) {
       res
