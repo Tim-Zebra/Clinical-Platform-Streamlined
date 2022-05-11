@@ -14,11 +14,13 @@ Admin.init(
     // Doctor, tech-admin, receptionist
     title: {
       type: DataTypes.STRING,
+      unique: false,
       allowNull: false,
     },
     // Admin Name
     name: {
       type: DataTypes.STRING,
+      unique: false,
       allowNull: false,
     },
     // login
@@ -28,6 +30,7 @@ Admin.init(
     },
     password: {
       type: DataTypes.STRING,
+      unique: false,
       allowNull: false,
     },
   },

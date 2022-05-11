@@ -22,6 +22,14 @@ User.belongsToMany(Admin, {
   foreignKey: 'user_id',
 });
 
+User.belongsToMany(Appointment, {
+  foreignKey: 'user_id',
+});
+
+Appointment.hasOne(User, {
+  foreignKey: 'user_id',
+});
+
 module.exports = { 
   Admin,
   Appointment,

@@ -14,6 +14,7 @@ User.init(
         // User Name
         name: {
             type: DataTypes.STRING,
+            unique: false,
             allowNull: false,
         },
         // Login info
@@ -23,6 +24,7 @@ User.init(
         },
         password: {
             type: DataTypes.STRING,
+            unique: false,
             allowNull: false,
         },
     },

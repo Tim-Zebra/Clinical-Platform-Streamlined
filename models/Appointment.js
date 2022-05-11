@@ -15,16 +15,19 @@ Appointment.init(
         },
         date: {
             type: DataTypes.STRING,
+            unique: false,
             allowNull: false,
         },
         // Cost of appointment
         cost: {
             type: DataTypes.DECIMAL(10,2),
+            unique: false,
             allowNull: false,
         },
         // Patient seen
         user_id: {
             type: DataTypes.INTEGER,
+            unique: false,
             allowNull: false,
                 references: {
                     model: 'user',
@@ -34,6 +37,7 @@ Appointment.init(
         // Provider seen
         admin_id: {
             type: DataTypes.INTEGER,
+            unique: false,
             allowNull: false,
             references: {
                 model: 'admin',
