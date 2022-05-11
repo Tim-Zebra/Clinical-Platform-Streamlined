@@ -50,4 +50,4 @@ Appointment.init(
     }
 );
 
-module.exports = User;
+module.exports = Appointment;
