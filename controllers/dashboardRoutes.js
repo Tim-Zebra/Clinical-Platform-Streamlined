@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const withAuth = require('../utils/auth');
+const { User, Admin, Appointment } = require('../models/');
 
+const withAuth = require('../utils/auth');
 // The `/dashboard` endpoint
 
 // View dashboard for user
@@ -12,5 +13,35 @@ router.get('/user', async (req, res) => {
 router.get('/admin', async (req, res) => {
   res.render('admin-main', {layout: 'dashboard'});
 });
+
+// Test Code View Dashboard for specific Admin
+router.get('/admin/:id', async (req, res) => {
+  try {
+    const adminData = await Admin.findAll(req.params.id, {
+      include: [
+        { 
+          model: User,
+          attributes: ['name'],
+        },
+        {
+          model: Appointment,
+          attributes: ['date', 'cost'],
+        },
+      ],
+    });
+
+    // Gets data for single admin
+    const admin = adminData.get({ plain: true });
+console.log('\x1b[36m', '\n\n----------------Dashboard Route Admin-------------------\n\n', admin, '\x1b[37m');
+    // Passes post and session status to mustache
+    res.render('admin-main', {
+      layout: 'dashboard',
+      // logged_in: req.session.loggedIn
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 module.exports = router;
