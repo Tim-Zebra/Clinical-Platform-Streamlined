@@ -1,0 +1,36 @@
+{{!-- TODO --}}
+{{!-- CSS NOT DONE. May need to remove all class variables. Maybe some id's as well --}}
+
+{{!-- Main dashboard page that will be the base for both admin and user --}}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psy MD. Dashboard</title>
+    <link rel="stylesheet" href="/css/jass.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="flex-column min-100-vh">
+  <nav class="navbar">
+    <!-- Navbar: contains login button. (Could add appointment/med page/etc) -->
+    <ul class="flex-row">
+      <li class="li-inline nav-item" id="logged-in-as">PLACEHOLDER: Will have admin name and title</li>
+      <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
+    </ul>
+  </nav>
+  <header class="hero">
+    <h1 class="app-title"><a href="/dashboard">Your Dashboard</a></h1>
+  </header>
+
+  <main class="col-auto">
+    {{{body}}}
+  </main>
+
+</body>
+
+<script src="/js/logout.js"></script>
+
+</html>

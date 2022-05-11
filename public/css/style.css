@@ -1,13 +1,14 @@
-footer {
-position: absolute;
-bottom: 0;
-width: 100%;
-text-align: center;
-margin-bottom: 10px;
-}
-
 header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
+}
+
+footer {
+  /* Sends footer to the bottom and centers*/
+    position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .no-button {
