@@ -19,7 +19,7 @@ Appointment.init(
         },
         // Cost of appointment
         cost: {
-            type: DataTypes.DECIMAL,
+            type: DataTypes.DECIMAL(10,2),
             allowNull: false,
         },
         // Patient seen
