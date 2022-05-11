@@ -22,7 +22,7 @@ Scheduler.init(
     },
 
     doctor_id: {
-      type: DataTypes.NUM,
+      type: DataTypes.INTEGER,
       allowNull:false
     },
 
@@ -41,7 +41,7 @@ Scheduler.init(
     },
 
     client_phone: {
-      type: DataTypes.NUM,
+      type: DataTypes.INTEGER,
       allowNull:false
     },
     client_symptoms: {
