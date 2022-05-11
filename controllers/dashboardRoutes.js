@@ -20,15 +20,20 @@ router.get('/admin/:id', async (req, res) => {
   try {
     const adminData = await Admin.findByPk(req.params.id, {
       include: [
+        // {
+        //   attributes: ['title', 'name', 'id'],
+        // },
         { 
           model: User,
           attributes: ['name'],
         },
-        // {
-        //   model: Appointment,
-        //   attributes: ['date', 'cost'],
-        // },
       ],
+      // exclude: [ 
+      //   {
+      //     model: Admin,
+      //     attributes: ['email', 'password'],
+      //   }
+      // ],
     });
 
     // Gets data for single admin
