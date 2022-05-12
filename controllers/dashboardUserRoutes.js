@@ -7,7 +7,6 @@ const { withAuthUser } = require('../utils/auth');
 // Routes to user at specific ID
 router.get('/', withAuthUser, async (req, res) => {
 // gets all associated appointment times, and the associated admins with those times
-req.session.user_id = 1;
 try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: {
@@ -47,7 +46,6 @@ try {
 // user schedule route
 
 router.get('/appointments', withAuthUser, async (req, res) => {
-  req.session.admin_id = 2;
   try {
       const adminData = await User.findByPk(req.session.admin_id, {
         attributes: {

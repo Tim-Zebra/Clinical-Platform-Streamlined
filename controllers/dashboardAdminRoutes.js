@@ -78,7 +78,6 @@ router.get('/appointments', withAuthAdmin, async (req, res) => {
   });
   
     router.get('/patients', withAuthAdmin, async (req, res) => {
-      req.session.admin_id = 2;
       try {
           const adminData = await Admin.findByPk(req.session.admin_id, {
             attributes: {
