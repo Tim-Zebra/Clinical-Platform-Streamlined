@@ -31,3 +31,20 @@ footer {
   font-weight: bold;
   margin-left: -5px;
 }
+
+.dashboardtop {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.dashboardbot {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+
+}
+
+.dashboardappointments {
+  margin-right: 150px;
+}

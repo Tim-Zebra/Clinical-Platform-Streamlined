@@ -7,7 +7,7 @@ const withAuth = require('../utils/auth');
 // Leave this for testing purposes. Will use /:id when deploying
 router.get('/', async (req, res) => {
   res.render('user-main', {
-    layout: 'dashboard',
+    layout: 'userdash',
   });
 });
 
