@@ -25,6 +25,11 @@ try {
       ],
     });
 
+    const data = adminData.get({ plain: true });
+
+    req.session.save(() => {
+      req.session.data = data;
+    })
     // Uncomment to see admin json response in Insomnia
     // res.json(adminData);
 

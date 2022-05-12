@@ -12,4 +12,10 @@ module.exports = {
     const newTime = moment(time, "HH:mm").format("hh:mm a");
     return newTime;
   },
+
+  random_cost: () => {
+    let wholeNum = Math.floor(Math.random() * 50);
+    let deciNum = Math.floor(Math.random() * 100);
+    return `${wholeNum}.${deciNum}`
+  }
 };

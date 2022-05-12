@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Scheduler, User } = require('../models');
+const { User, Appointment, Admin } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Renders layouts.main

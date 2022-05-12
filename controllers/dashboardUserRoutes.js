@@ -26,14 +26,18 @@ try {
       ],
     });
 
+    const data = userData.get({ plain: true });
+
     // Uncomment to see admin json response in Insomnia
     // res.json(userData);
 
     // Comment out res.render if sending multiple requests to Insomnia
     // Passes post and session status to mustache
     res.render('user-main', {
+      
       layout: 'userdash',
       userData,
+
     });
   } catch (err) {
     res.status(500).json(err);
