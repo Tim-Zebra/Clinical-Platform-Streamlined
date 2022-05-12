@@ -26,6 +26,7 @@ try {
     });
 
     const data = adminData.get({ plain: true });
+console.log(data);
 
     // Uncomment to see admin json response in Insomnia
     // res.json(adminData);
