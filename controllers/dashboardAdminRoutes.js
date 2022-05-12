@@ -7,7 +7,6 @@ const { withAuthAdmin } = require('../utils/auth');
 // Routes to admin at specific ID
 router.get('/', withAuthAdmin, async (req, res) => {
 // gets all associated appointment times, and the associated users with those times
-req.session.admin_id = 2;
 try {
     const adminData = await Admin.findByPk(req.session.admin_id, {
       attributes: {
@@ -27,14 +26,14 @@ try {
     });
 
     // Uncomment to see admin json response in Insomnia
-    // res.json(adminData);
+    res.json(adminData);
 
     // Uncomment out res.render if sending multiple requests to Insomnia
     // Passes post and session status to mustache
-    res.render('admin-main', {
-      layout: 'dashboard',
-      adminData,
-    });
+    // res.render('admin-main', {
+    //   layout: 'dashboard',
+    //   adminData,
+    // });
   } catch (err) {
     res.status(500).json(err);
   }
