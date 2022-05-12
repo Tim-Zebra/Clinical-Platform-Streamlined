@@ -1,15 +1,15 @@
 const router = require('express').Router();
 const { User, Admin, Appointment } = require('../models/');
-const withAuthUser = require('../utils/auth');
+const { withAuthUser } = require('../utils/auth');
 
 // The `/dashboard/user` endpoint
 
 // Routes to user at specific ID
 router.get('/', withAuthUser, async (req, res) => {
 // gets all associated appointment times, and the associated admins with those times
-req.params.session_id = 1;
+req.session.user_id = 1;
 try {
-    const userData = await User.findByPk(req.params.session_id, {
+    const userData = await User.findByPk(req.session.user_id, {
       attributes: {
         exclude: ['email', 'password'],
       },
