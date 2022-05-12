@@ -38,8 +38,11 @@ router.post('/login', async (req, res) => {
       return;
     }
 
+    req.session.admin_id = userData.id;
+    req.session.admin_logged_in = true;
+console.log('\x1b[36m', '\n\n----------------This happended-------------------\n\n', req.session.admin_id , req.session.admin_logged_in, '\x1b[37m');
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      req.session.admin_id = userData.id;
       req.session.admin_logged_in = true;
       
       res.json({ user: userData, message: 'You are now logged in!' });
