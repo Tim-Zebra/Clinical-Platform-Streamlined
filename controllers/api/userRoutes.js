@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User } = require('../../models');
 var bcrypt = require('bcrypt');
 const withAuthUser = require('../../utils/auth');
-const randomNum = require('../../utils/helpers');
+const randomCost = require('../../utils/helpers').random_cost();
 // Routing end point "api/users"
 
 // User login
@@ -43,10 +43,11 @@ router.post('/createAppt', async (req, res) => {
   req.body.date = '04-20-2022';
   req.body.start ='10:00';
   req.body.end ='11:00';
-  req.body.cost = 20.53;
-  req.body.userId ='04-20-2022';
-  req.body.adminId
+  req.body.cost = randomCost;
+  req.body.userId = 1;
+  req.body.adminId = 2;
   
+  // Actual code
   try {
     const newAppt = await Appointment.create({
       date: req.body.date,
@@ -57,13 +58,8 @@ router.post('/createAppt', async (req, res) => {
       admin_id: req.body.adminId
     });
 
-    req.session.save(() => {
-      req.session.userId = newUser.id;
-      req.session.username = newUser.username;
-      req.session.loggedIn = true;
+    res.json(newUser);
 
-      res.json(newUser);
-    });
   } catch (err) {
     res.status(500).json(err);
   }
