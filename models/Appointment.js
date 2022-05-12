@@ -19,6 +19,16 @@ Appointment.init(
             unique: false,
             allowNull: false,
         },
+        start_time: {
+            type: DataTypes.STRING,
+            unique: false,
+            allowNull: false,
+        },
+        end_time: {
+            type: DataTypes.STRING,
+            unique: false,
+            allowNull: false,
+        },
         // Cost of appointment
         cost: {
             type: DataTypes.DECIMAL(10,2),
