@@ -27,14 +27,14 @@ try {
     });
 
     // Uncomment to see admin json response in Insomnia
-    res.json(userData);
+    // res.json(userData);
 
     // Comment out res.render if sending multiple requests to Insomnia
     // Passes post and session status to mustache
-    // res.render('user-main', {
-    //   layout: 'dashboard',
-    //   userData,
-    // });
+    res.render('user-main', {
+      layout: 'dashboard',
+      userData,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
