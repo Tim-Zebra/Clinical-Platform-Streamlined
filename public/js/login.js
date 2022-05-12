@@ -5,9 +5,6 @@ const loginFormHandler = async (event) => {
   const email = document.querySelector('#user-email-login').value.trim();
   const password = document.querySelector('#user-password-login').value.trim();
 
-  console.log (email);
-  console.log (password);
-
   if (email && password) {
     // Send a POST request to the API endpoint
     const response = await fetch('/api/users/login', {
@@ -16,13 +13,12 @@ const loginFormHandler = async (event) => {
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
-console.log(response);
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
       document.location.replace('/dashboard/user');
     } else {
-      alert("Login not succesful");
+      alert("Login not successful, plesese try again.");
     }
   }
 };
@@ -34,9 +30,6 @@ const adminFormHandler = async (event) => {
   const email = document.querySelector('#admin-email-login').value.trim();
   const password = document.querySelector('#admin-password-login').value.trim();
 
-  console.log (email);
-  console.log (password);
-
   if (email && password) {
     // Send a POST request to the API endpoint
     const response = await fetch('/api/admin/login', {
@@ -45,13 +38,12 @@ const adminFormHandler = async (event) => {
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
-console.log(response);
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
       document.location.replace('/dashboard/admin');
     } else {
-      alert("Wrong email or password!");
+      alert("Login not successful, plesese try again.");
     }
   }
 };
