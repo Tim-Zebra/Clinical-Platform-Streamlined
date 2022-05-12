@@ -16,9 +16,9 @@ router.get('/', async (req, res) => {
 
 // Routes to admin at specific ID
 router.get('/:id', async (req, res) => {
-// gets all associated appointment times, and the associated patients with those times
+// gets all associated appointment times, and the associated users with those times
 try {
-    const apptData = await Admin.findByPk(req.params.id, {
+    const adminData = await Admin.findByPk(req.params.id, {
       attributes: {
         exclude: ['email', 'password'],
       },
@@ -36,13 +36,13 @@ try {
     });
 
     // Uncomment to see admin json response in Insomnia
-    // res.json(apptData);
+    res.json(adminData);
 
     // Comment out res.render if sending multiple requests to Insomnia
     // Passes post and session status to mustache
     // res.render('admin-main', {
     //   layout: 'dashboard',
-    //   apptData,
+    //   adminData,
     //   // logged_in: req.session.loggedIn
     // });
   } catch (err) {
