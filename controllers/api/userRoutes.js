@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Appointment, Admin } = require('../../models');
 var bcrypt = require('bcrypt');
 const withAuthUser = require('../../utils/auth');
 const randomCost = require('../../utils/helpers').random_cost();
@@ -46,7 +46,7 @@ router.post('/createAppt', async (req, res) => {
   req.body.cost = randomCost;
   req.body.userId = 1;
   req.body.adminId = 2;
-  
+  console.log('\x1b[36m', '\n\n----------------Create happened-------------------\n\n', '\x1b[37m');
   // Actual code
   try {
     const newAppt = await Appointment.create({
@@ -58,7 +58,8 @@ router.post('/createAppt', async (req, res) => {
       admin_id: req.body.adminId
     });
 
-    res.json(newUser);
+    console.log('\x1b[36m', '\n\n----------------NEW APPT-------------------\n\n', newAppt, '\x1b[37m');
+    res.json(newAppt);
 
   } catch (err) {
     res.status(500).json(err);

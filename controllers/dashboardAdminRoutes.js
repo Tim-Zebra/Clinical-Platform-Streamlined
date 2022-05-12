@@ -37,7 +37,7 @@ try {
     // Passes post and session status to mustache
     res.render('admin-main', {
       layout: 'dashboard',
-      data,
+      adminData,
     });
   } catch (err) {
     res.status(500).json(err);
