@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const { User, Admin, Appointment } = require('../models/');
-const withAuth = require('../utils/auth');
+const withAuthUser = require('../utils/auth');
 
 // The `/dashboard/user` endpoint
 
 // Routes to user at specific ID
-router.get('/', async (req, res) => {
+router.get('/', withAuthUser, async (req, res) => {
 // gets all associated appointment times, and the associated admins with those times
 req.params.session_id = 1;
 try {

@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const { User, Admin, Appointment } = require('../models/');
-const { sequelize } = require('../models/User');
-
-const withAuth = require('../utils/auth');
+const withAuthAdmin = require('../utils/auth');
 
 // The `/dashboard/admin` endpoint
 

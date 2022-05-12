@@ -1,22 +1,8 @@
 const router = require('express').Router();
 const { Admin } = require('../../models');
+const withAuthAdmin = require('../../utils/auth');
 
 // Routing end point "api/admin"
-
-// router.post('/', async (req, res) => {
-//   try {
-//     const userData = await Admin.create(req.body);
-
-//     req.session.save(() => {
-//       req.session.user_id = userData.id;
-//       req.session.logged_in = true;
-
-//       res.status(200).json(userData);
-//     });
-//   } catch (err) {
-//     res.status().json(err);
-//   }
-// });
 
 router.post('/login', async (req, res) => {
   try {
@@ -38,9 +24,6 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    req.session.admin_id = userData.id;
-    req.session.admin_logged_in = true;
-console.log('\x1b[36m', '\n\n----------------This happended-------------------\n\n', req.session.admin_id , req.session.admin_logged_in, '\x1b[37m');
     req.session.save(() => {
       req.session.admin_id = userData.id;
       req.session.admin_logged_in = true;

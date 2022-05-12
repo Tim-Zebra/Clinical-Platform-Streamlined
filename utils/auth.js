@@ -2,7 +2,7 @@
 const withAuthUser = (req, res, next) => {
   // If the user is not logged in, redirect the request to the login route
   if (!req.session.user_logged_in) {
-    res.redirect('/login');
+    res.redirect('/');
   } else {
     next();
   }
@@ -12,7 +12,7 @@ const withAuthUser = (req, res, next) => {
 const withAuthAdmin = (req, res, next) => {
   // If the user is not logged in, redirect the request to the login route
   if (!req.session.admin_logged_in) {
-    res.redirect('/login');
+    res.redirect('/');
   } else {
     next();
   }
