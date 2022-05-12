@@ -1,4 +1,19 @@
+ {{#if appointments.length}}
+
 <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 align-items-right cat">
-  <div></div>
-  <div></div>
-</div>
+  <h4 class="rach">Upcoming Appointments:</h4>
+
+{{#each appointments as |appointment|}}
+  <div class="card">
+    <div class="container">
+      <h4>Patient Name</h4>
+      <p>Date & Time:</p>
+      <p>Symptoms</p>
+      <ol>
+        <li>My symptom!</li>
+      </ol>
+    </div>
+   {{/each}}
+     </div>
+  {{/if}}
+    </div>
