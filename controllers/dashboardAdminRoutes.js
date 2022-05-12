@@ -58,9 +58,12 @@ router.get('/appointments', withAuthAdmin, async (req, res) => {
           },
         ],
       });
+
+      const data = adminData.get({ plain: true });
+
       res.render('admin-appointments', {
         layout: 'dashboard',
-        adminData,
+        data,
       });
     } catch (err) {
       res.status(500).json(err);
