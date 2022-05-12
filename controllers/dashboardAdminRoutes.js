@@ -25,6 +25,11 @@ try {
       ],
     });
 
+    const data = adminData.get({ plain: true });
+
+    req.session.save(() => {
+      req.session.data = data;
+    })
     // Uncomment to see admin json response in Insomnia
     // res.json(adminData);
 
@@ -61,6 +66,8 @@ router.get('/appointments', withAuthAdmin, async (req, res) => {
 
       const data = adminData.get({ plain: true });
 
+      console.log(data);
+
       res.render('admin-appointments', {
         layout: 'dashboard',
         data,
@@ -90,10 +97,12 @@ router.get('/appointments', withAuthAdmin, async (req, res) => {
             ],
           });
 
-          console.log (adminData);
+          const data = adminData.get({ plain: true });
+
+          console.log (data.appointments);
           res.render('admin-patients', {
             layout: 'dashboard',
-            adminData,
+            data,
           });
         } catch (err) {
           res.status(500).json(err);

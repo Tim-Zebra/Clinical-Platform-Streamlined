@@ -7,9 +7,9 @@
   {{#each data.appointments as |appointment|}}
     <div class="card">
       <div class="container">
-        <h4>{{date}}</h4>
-        <p>Date & Time:</p>
-        <p>Symptoms</p>
+        <h4>Patient Name:{{user.name}}</h4>
+        <p>Date:{{date}} Time:{{format_time start_time}}-{{format_time end_time}}</p>
+        <p>Seeing Doctor:</p>
         <ol>
           <li>My symptom!</li>
         </ol>
