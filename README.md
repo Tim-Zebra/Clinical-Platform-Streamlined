@@ -1,7 +1,7 @@
-# 
+# Clinical Platform for Small Practices
 
 ## Description
-describe <br /> <br />
+A straight forward and user friendly web application that helps small medical practices organize their appointments. As an example, a small psychiatry practice is being used.<br /> <br />
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
  ## Table of Contents:
@@ -25,7 +25,7 @@ describe <br /> <br />
 </p>
 
 ## Link to Deployed Page:
-
+https://clinic-coders-office-solutions.herokuapp.com/
 
 ## References:
 * 
