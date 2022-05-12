@@ -5,10 +5,11 @@ const userData = require('./userData.json');
 const adminData = require('./adminData.json');
 const appointmentData = require('./appointmentData.json');
 
+// Organized by most to least dependent on seeds
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
-
-  const users = await User.bulkCreate(userData, {
+  
+  const user = await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
   });
@@ -18,10 +19,11 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  const appointments = await Appointment.bulkCreate(appointmentData, {
+  const appointment = await Appointment.bulkCreate(appointmentData, {
     individualHooks: true,
     returning: true,
   });
+
 
   process.exit(0);
 };
