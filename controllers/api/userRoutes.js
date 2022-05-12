@@ -1,28 +1,15 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 var bcrypt = require('bcrypt');
+const withAuthUser = require('../../utils/auth');
 
-router.post('/', async (req, res) => {
-  try {
-    const userData = await User.create(req.body);
-
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-
-      res.status(200).json(userData);
-    });
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
+// Routing end point "api/users"
 
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
-      
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
@@ -31,34 +18,34 @@ router.post('/login', async (req, res) => {
 
     const validPassword = await userData.password === req.body.password;
 
-    console.log(validPassword);
-
-    if (validPassword === false) {
-      alert("Please enter a valid email or password!");
+    if (!validPassword) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password, please try again' });
       return;
     }
 
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.logged_in = true;
+      req.session.user_logged_in = true;
       
       res.json({ user: userData, message: 'You are now logged in!' });
     });
-
   } catch (err) {
     res.status(400).json(err);
-    console.log(err);
   }
 });
 
-router.post('/logout', (req, res) => {
-  if (req.session.logged_in) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).end();
-  }
-});
+
+// Can re-enable if landing page changes. Currently landing pages destroys session
+// router.post('/logout', (req, res) => {
+//   if (req.session.user_logged_in) {
+//     req.session.destroy(() => {
+//       res.status(204).end();
+//     });
+//   } else {
+//     res.status(404).end();
+//   }
+// });
 
 module.exports = router;

@@ -1,21 +1,15 @@
 const router = require('express').Router();
 const { User, Admin, Appointment } = require('../models/');
-const withAuth = require('../utils/auth');
+const { withAuthUser } = require('../utils/auth');
 
 // The `/dashboard/user` endpoint
 
-// Leave this for testing purposes. Will use /:id when deploying
-router.get('/', async (req, res) => {
-  res.render('user-main', {
-    layout: 'userdash',
-  });
-});
-
 // Routes to user at specific ID
-router.get('/:id', async (req, res) => {
+router.get('/', withAuthUser, async (req, res) => {
 // gets all associated appointment times, and the associated admins with those times
+req.session.user_id = 1;
 try {
-    const userData = await User.findByPk(req.params.id, {
+    const userData = await User.findByPk(req.session.user_id, {
       attributes: {
         exclude: ['email', 'password'],
       },
@@ -40,7 +34,6 @@ try {
     res.render('user-main', {
       layout: 'dashboard',
       userData,
-      // logged_in: req.session.loggedIn
     });
   } catch (err) {
     res.status(500).json(err);

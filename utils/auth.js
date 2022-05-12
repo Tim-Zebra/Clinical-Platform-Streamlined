@@ -1,10 +1,24 @@
-const withAuth = (req, res, next) => {
+// Allows user to only access their user page when logged in, and can only access their user page
+const withAuthUser = (req, res, next) => {
   // If the user is not logged in, redirect the request to the login route
-  if (!req.session.logged_in) {
-    res.redirect('/login');
+  if (!req.session.user_logged_in) {
+    res.redirect('/');
   } else {
     next();
   }
 };
 
-module.exports = withAuth;
+// Allows admin to only access their admin page when logged in, and can only access their admin page
+const withAuthAdmin = (req, res, next) => {
+  // If the user is not logged in, redirect the request to the login route
+  if (!req.session.admin_logged_in) {
+    res.redirect('/');
+  } else {
+    next();
+  }
+};
+
+module.exports = {
+  withAuthUser,
+  withAuthAdmin,
+};
