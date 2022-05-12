@@ -14,8 +14,8 @@ A straight forward and user friendly web application that helps small medical pr
   **[Author](#author)** <br />
 
 ## How to Use:
-* 
-* 
+* Login to the portal using either user or admin, depending on your credentials, to see your dashboard <br />
+* For users: select appointments tab to add, edit, or delete your appointments
 
 ## Application Demos:
 <p align="center">
@@ -30,10 +30,19 @@ https://clinic-coders-office-solutions.herokuapp.com/
 ## References:
 * 
 * 
+
 ## Development Process:
-1. 
-2. 
-3. See commits for more details
+1. Set up base files, created proposal, and wireframed <br />
+2. Pseudocoded files <br />
+3. Started with main landing page display, simple login, minimal routes, and minimal seed data <br />
+4. Used Kanban board to create small goals/tasks with end in mind <br />
+5. Split into front end and back end <br />
+6. Created back end database, server, and routes <br />
+7. Created front end handlebars and CSS <br />
+8. Set up server with database <br />
+9. Tied in front in and backend <br />
+10. Implemented optional enchancements <br />
+11. See commits for more details <br />
 
 ## Author:
 Created by Timothy Zalewski | Deployed on [GitHub](https://github.com/Tim-Zebra)
