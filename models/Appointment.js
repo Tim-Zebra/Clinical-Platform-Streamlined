@@ -10,6 +10,7 @@ Appointment.init(
             unique: true,
             allowNull: false,
             primaryKey: true,
+            autoIncrement: true,
         // Dates/time (Should be able to pass in both date and time)
         // https://sebhastian.com/sequelize-date-format/
         },
