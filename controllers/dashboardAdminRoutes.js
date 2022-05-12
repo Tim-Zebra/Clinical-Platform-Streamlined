@@ -27,20 +27,18 @@ try {
     });
 
     // Uncomment to see admin json response in Insomnia
-    res.json(adminData);
+    // res.json(adminData);
 
-    // Comment out res.render if sending multiple requests to Insomnia
+    // Uncomment out res.render if sending multiple requests to Insomnia
     // Passes post and session status to mustache
-    // res.render('admin-main', {
-    //   layout: 'dashboard',
-    //   adminData,
-    //   // logged_in: req.session.loggedIn
-    // });
+    res.render('admin-main', {
+      layout: 'dashboard',
+      adminData,
+      logged_in: req.session.loggedIn
+    });
   } catch (err) {
     res.status(500).json(err);
   }
 });
-
-
 
 module.exports = router;
