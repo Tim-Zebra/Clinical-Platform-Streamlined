@@ -7,7 +7,5 @@ const dashboardUserRoutes = require('./dashboardUserRoutes.js');
 
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
-router.use('/dashboard/admin', dashboardAdminRoutes);
-router.use('/dashboard/user', dashboardUserRoutes);
 
 module.exports = router;
