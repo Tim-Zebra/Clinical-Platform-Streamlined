@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Appointment, Admin } = require('../../models');
 var bcrypt = require('bcrypt');
 const withAuthUser = require('../../utils/auth');
-const randomCost = require('../../utils/helpers').random_cost();
+const helper = require('../../utils/helpers');
 // Routing end point "api/users"
 
 // User login
@@ -39,26 +39,18 @@ router.post('/login', async (req, res) => {
 
 // Add an appointment to the database
 router.post('/createAppt', async (req, res) => {
-  // test variables
-  req.body.date = '04-20-2022';
-  req.body.start ='10:00';
-  req.body.end ='11:00';
-  req.body.cost = randomCost;
-  req.body.userId = 1;
-  req.body.adminId = 2;
-  console.log('\x1b[36m', '\n\n----------------Create happened-------------------\n\n', '\x1b[37m');
+  console.log('\x1b[36m', '\n\n----------------req BODY-------------------\n\n', req.body, '\x1b[37m');
   // Actual code
   try {
     const newAppt = await Appointment.create({
       date: req.body.date,
-      start_time: req.body.start,
-      end_time: req.body.end,
-      cost: req.body.cost,
-      user_id: req.body.userId,
-      admin_id: req.body.adminId
+      start_time: req.body.start_time,
+      end_time: req.body.end_time,
+      cost: helper.random_cost(),
+      user_id: req.body.user_id,
+      admin_id: req.body.admin_id
     });
 
-    console.log('\x1b[36m', '\n\n----------------NEW APPT-------------------\n\n', newAppt, '\x1b[37m');
     res.json(newAppt);
 
   } catch (err) {
