@@ -39,8 +39,6 @@ router.post('/login', async (req, res) => {
 
 // Add an appointment to the database
 router.post('/createAppt', async (req, res) => {
-  console.log('\x1b[36m', '\n\n----------------req BODY-------------------\n\n', req.body, '\x1b[37m');
-  // Actual code
   try {
     const newAppt = await Appointment.create({
       date: req.body.date,
@@ -59,10 +57,43 @@ router.post('/createAppt', async (req, res) => {
 });
 
 // Update an appointment in the database
+router.put('/updateAppt', async (req, res) => {
+  console.log('\x1b[36m', '\n\n----------------Update appt happened-------------------\n\n', '\x1b[37m');
+  try {
+    const [affectedRows] = await Appointment.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
 
+    if (affectedRows > 0) {
+      res.status(200).end();
+    } else {
+      res.status(404).end();
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // Delete and appointment in the database
+router.post('/deleteAppt', async (req, res) => {
+  try {
+    const newAppt = await Appointment.destroy({
+      date: req.body.date,
+      start_time: req.body.start_time,
+      end_time: req.body.end_time,
+      cost: helper.random_cost(),
+      user_id: req.body.user_id,
+      admin_id: req.body.admin_id
+    });
 
+    res.json(newAppt);
+
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 
 

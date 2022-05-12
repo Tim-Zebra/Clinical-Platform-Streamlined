@@ -27,9 +27,6 @@ try {
 
     const data = adminData.get({ plain: true });
 
-    req.session.save(() => {
-      req.session.data = data;
-    })
     // Uncomment to see admin json response in Insomnia
     // res.json(adminData);
 
@@ -37,7 +34,7 @@ try {
     // Passes post and session status to mustache
     res.render('admin-main', {
       layout: 'dashboard',
-      adminData,
+      data,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -66,8 +63,6 @@ router.get('/appointments', withAuthAdmin, async (req, res) => {
 
       const data = adminData.get({ plain: true });
 
-      console.log(data);
-
       res.render('admin-appointments', {
         layout: 'dashboard',
         data,
@@ -78,7 +73,6 @@ router.get('/appointments', withAuthAdmin, async (req, res) => {
   });
   
     router.get('/patients', withAuthAdmin, async (req, res) => {
-      req.session.admin_id = 2;
       try {
           const adminData = await Admin.findByPk(req.session.admin_id, {
             attributes: {
@@ -97,12 +91,9 @@ router.get('/appointments', withAuthAdmin, async (req, res) => {
             ],
           });
 
-          const data = adminData.get({ plain: true });
-
-          console.log (data.appointments);
           res.render('admin-patients', {
             layout: 'dashboard',
-            data,
+            adminData,
           });
         } catch (err) {
           res.status(500).json(err);
