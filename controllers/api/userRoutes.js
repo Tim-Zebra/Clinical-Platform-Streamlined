@@ -3,6 +3,7 @@ const { User, Appointment, Admin } = require('../../models');
 var bcrypt = require('bcrypt');
 const withAuthUser = require('../../utils/auth');
 const helper = require('../../utils/helpers');
+
 // Routing end point "api/users"
 
 // User login
@@ -58,11 +59,10 @@ router.post('/createAppt', async (req, res) => {
 
 // Update an appointment in the database
 router.put('/updateAppt', async (req, res) => {
-  console.log('\x1b[36m', '\n\n----------------Update appt happened-------------------\n\n', '\x1b[37m');
   try {
     const [affectedRows] = await Appointment.update(req.body, {
       where: {
-        id: req.params.id,
+        id: req.body.id,
       },
     });
 
