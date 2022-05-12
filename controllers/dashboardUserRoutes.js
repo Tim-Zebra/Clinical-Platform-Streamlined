@@ -26,6 +26,12 @@ try {
       ],
     });
 
+    const data = userData.get({ plain: true });
+
+    req.session.save(() => {
+      req.session.data = data;
+    })
+
     // Uncomment to see admin json response in Insomnia
     // res.json(userData);
 
@@ -33,7 +39,7 @@ try {
     // Passes post and session status to mustache
     res.render('user-main', {
       layout: 'dashboard',
-      userData,
+      data,
     });
   } catch (err) {
     res.status(500).json(err);

@@ -9,5 +9,11 @@ module.exports = {
   format_time: time => {
     return 
   },
+
+  random_cost: () => {
+    let wholeNum = Math.floor(Math.random() * 50);
+    let deciNum = Math.floor(Math.random() * 100);
+    return `${wholeNum}.${deciNum}`
+  }
 };
 

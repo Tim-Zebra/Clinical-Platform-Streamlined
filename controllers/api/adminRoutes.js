@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Admin } = require('../../models');
+const { User, Appointment, Admin } = require('../../models');
 const withAuthAdmin = require('../../utils/auth');
 
 // Routing end point "api/admin"
