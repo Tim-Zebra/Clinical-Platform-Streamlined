@@ -31,21 +31,21 @@ router.post('/login', async (req, res) => {
       
       res.json({ user: userData, message: 'You are now logged in!' });
     });
-
   } catch (err) {
     res.status(400).json(err);
-    console.log(err);
   }
 });
 
-router.post('/logout', (req, res) => {
-  if (req.session.user_logged_in) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).end();
-  }
-});
+
+// Can re-enable if landing page changes. Currently landing pages destroys session
+// router.post('/logout', (req, res) => {
+//   if (req.session.user_logged_in) {
+//     req.session.destroy(() => {
+//       res.status(204).end();
+//     });
+//   } else {
+//     res.status(404).end();
+//   }
+// });
 
 module.exports = router;

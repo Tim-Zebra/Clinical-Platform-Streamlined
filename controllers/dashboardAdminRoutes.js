@@ -34,7 +34,6 @@ try {
     res.render('admin-main', {
       layout: 'dashboard',
       adminData,
-      logged_in: req.session.loggedIn
     });
   } catch (err) {
     res.status(500).json(err);
