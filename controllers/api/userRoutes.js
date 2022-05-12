@@ -77,25 +77,23 @@ router.put('/updateAppt', async (req, res) => {
 });
 
 // Delete and appointment in the database
-router.post('/deleteAppt', async (req, res) => {
+router.delete('/deleteAppt', async (req, res) => {
   try {
-    const newAppt = await Appointment.destroy({
-      date: req.body.date,
-      start_time: req.body.start_time,
-      end_time: req.body.end_time,
-      cost: helper.random_cost(),
-      user_id: req.body.user_id,
-      admin_id: req.body.admin_id
+    const [affectedRows] = await Appointment.destroy({
+      where: {
+        id: req.body.id,
+      },
     });
 
-    res.json(newAppt);
-
+    if (affectedRows > 0) {
+      res.status(200).end();
+    } else {
+      res.status(404).end();
+    }
   } catch (err) {
     res.status(500).json(err);
   }
 });
-
-
 
 // Can re-enable if landing page changes. Currently landing pages destroys session
 // router.post('/logout', (req, res) => {
