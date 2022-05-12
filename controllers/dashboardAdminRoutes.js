@@ -92,10 +92,12 @@ router.get('/appointments', withAuthAdmin, async (req, res) => {
             ],
           });
 
-          console.log (adminData);
+          const data = adminData.get({ plain: true });
+
+          console.log (data.appointments);
           res.render('admin-patients', {
             layout: 'dashboard',
-            adminData,
+            data,
           });
         } catch (err) {
           res.status(500).json(err);
