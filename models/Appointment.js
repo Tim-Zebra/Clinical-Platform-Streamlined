@@ -29,20 +29,20 @@ Appointment.init(
             type: DataTypes.INTEGER,
             unique: false,
             allowNull: false,
-                references: {
-                    model: 'user',
-                    key: 'id',
-                }
+                // references: {
+                //     model: 'user',
+                //     key: 'id',
+                // }
         },
         // // Provider seen
         admin_id: {
             type: DataTypes.INTEGER,
             unique: false,
             allowNull: false,
-            references: {
-                model: 'admin',
-                key: 'id',
-            }
+            // references: {
+            //     model: 'admin',
+            //     key: 'id',
+            // }
         },
     },
     {

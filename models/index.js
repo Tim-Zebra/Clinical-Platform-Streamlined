@@ -6,22 +6,39 @@ const Appointment = require('./Appointment');
 const User = require('./User');
 
 // Links users with appointment
-// User.belongsTo(Appointment, {
-//   foreignKey: 'user_id',
-// })
+Appointment.belongsTo(User, {
+  foreignKey: 'user_id'
+})
 
-// Appointment.hasOne(User, {
-//   foreignKey: 'user_id',
-// });
+User.hasMany(Appointment, {
+  foreignKey: 'user_id'
+});
 
 // // Links admin with appointments
-// // Admin.belongsTo(Appointment, {
-// //   foreignKey: 'admin_id',
-// // })
+Appointment.belongsTo(Admin, {
+  foreignKey: 'admin_id'
+})
 
-// Appointment.hasOne(Admin, {
-//   foreignKey: 'admin_id',
-// });
+Admin.hasMany(Appointment, {
+  foreignKey: 'admin_id'
+});
+
+Admin.belongsToMany(User, {
+  through: {
+    model: Appointment,
+    unique: false
+  },
+  foreignKey: 'admin_id'
+});
+
+User.belongsToMany(Admin, {
+  through: {
+    model: Appointment,
+    unique: false
+  },
+  foreignKey: 'admin_id'
+});
+
 
 module.exports = { 
   Admin,
