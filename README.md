@@ -45,4 +45,7 @@ https://clinic-coders-office-solutions.herokuapp.com/
 11. See commits for more details <br />
 
 ## Author:
-Created by Timothy Zalewski | Deployed on [GitHub](https://github.com/Tim-Zebra)
+* Created by Timothy Zalewski | [GitHub](https://github.com/Tim-Zebra)
+* Created by Stephen K | [GitHub](https://github.com/skelly2022)
+* Created by Joshua Dominguez | [GitHub](https://github.com/jcd2k)
+* Created by Jon Edwards | [GitHub](https://github.com/JonNotJohn440)
