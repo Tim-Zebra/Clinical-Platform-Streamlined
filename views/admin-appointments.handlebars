@@ -1,18 +1,12 @@
 <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 align-items-right cat">
-  <h4 class="rach">Upcoming Appointments:</h4>
-
-  <p>{{data.title}}</p>
-  <p>Symptoms</p>
+  <h4 class="rach">Upcoming Appointments:{{../data.name}}</h4>
 
   {{#each data.appointments as |appointment|}}
     <div class="card">
-      <div class="container">
+      <div class="container adminappointment">
         <h4>Patient Name:{{user.name}}</h4>
         <p>Date:{{date}} Time:{{format_time start_time}}-{{format_time end_time}}</p>
-        <p>Seeing Doctor:</p>
-        <ol>
-          <li>My symptom!</li>
-        </ol>
+     
       </div>
     </div>
   {{/each}}

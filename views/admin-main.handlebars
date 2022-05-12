@@ -6,17 +6,17 @@
       style=""
     />
     <div class="container">
-      <h4><b>John Doe</b></h4>
-      <p>Doctor</p>
+      <h4>Currently Signed in: <b>{{data.name}}</b></h4>
+        <h4>Role:<b> {{data.title}}</b></h4>
     </div>
   </div>
   <div class="dashboardbot">
     <div>
       <h1>List of patients</h1>
       <ul>
-        <li>Josh</li>
-        <li>Alex</li>
-        <li>Brent</li>
+    {{#each data.appointments as |appointment|}}
+        <li>{{user.name}}</li>
+          {{/each}}
       </ul>
     </div>
     <div class="dashboardappointments">

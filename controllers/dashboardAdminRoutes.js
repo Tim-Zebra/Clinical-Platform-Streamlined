@@ -26,6 +26,7 @@ try {
     });
 
     const data = adminData.get({ plain: true });
+console.log(data);
 
     req.session.save(() => {
       req.session.data = data;
@@ -37,7 +38,7 @@ try {
     // Passes post and session status to mustache
     res.render('admin-main', {
       layout: 'dashboard',
-      adminData,
+      data,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -45,7 +46,6 @@ try {
 });
 
 router.get('/appointments', withAuthAdmin, async (req, res) => {
-  req.session.admin_id = 2;
   try {
       const adminData = await Admin.findByPk(req.session.admin_id, {
         attributes: {
@@ -78,7 +78,6 @@ router.get('/appointments', withAuthAdmin, async (req, res) => {
   });
   
     router.get('/patients', withAuthAdmin, async (req, res) => {
-      req.session.admin_id = 2;
       try {
           const adminData = await Admin.findByPk(req.session.admin_id, {
             attributes: {
