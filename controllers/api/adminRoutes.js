@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { Admin } = require('../../models');
 
+// Routing end point "api/admin"
+
 // router.post('/', async (req, res) => {
 //   try {
 //     const userData = await Admin.create(req.body);
@@ -20,7 +22,6 @@ router.post('/login', async (req, res) => {
   try {
     const userData = await Admin.findOne({ where: { email: req.body.email } });
 
-    console.log(userData);
     if (!userData) {
       res
         .status(400)
@@ -37,11 +38,9 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    console.log('\x1b[36m', '\n\n----------------This happended-------------------\n\n', validPassword, userData,'\x1b[37m');
-
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.logged_in = true;
+      req.session.admin_logged_in = true;
       
       res.json({ user: userData, message: 'You are now logged in!' });
     });

@@ -2,27 +2,29 @@ const router = require('express').Router();
 const { User } = require('../../models');
 var bcrypt = require('bcrypt');
 
-router.post('/', async (req, res) => {
-  try {
-    const userData = await User.create(req.body);
+// Routing end point "api/users"
 
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
+// May not need
+// router.post('/', async (req, res) => {
+//   try {
+//     const userData = await User.create(req.body);
 
-      res.status(200).json(userData);
-    });
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
+//     req.session.save(() => {
+//       req.session.user_id = userData.id;
+//       req.session.user_logged_in = true;
+
+//       res.status(200).json(userData);
+//     });
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
 
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
-      
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
@@ -31,16 +33,16 @@ router.post('/login', async (req, res) => {
 
     const validPassword = await userData.password === req.body.password;
 
-    console.log(validPassword);
-
-    if (validPassword === false) {
-      alert("Please enter a valid email or password!");
+    if (!validPassword) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password, please try again' });
       return;
     }
 
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.logged_in = true;
+      req.session.user_logged_in = true;
       
       res.json({ user: userData, message: 'You are now logged in!' });
     });
