@@ -61,6 +61,8 @@ router.get('/appointments', withAuthAdmin, async (req, res) => {
 
       const data = adminData.get({ plain: true });
 
+      console.log(data);
+
       res.render('admin-appointments', {
         layout: 'dashboard',
         data,
