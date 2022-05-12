@@ -42,7 +42,6 @@ try {
 });
 
 router.get('/appointments', withAuthAdmin, async (req, res) => {
-  req.session.admin_id = 2;
   try {
       const adminData = await Admin.findByPk(req.session.admin_id, {
         attributes: {
@@ -72,34 +71,32 @@ router.get('/appointments', withAuthAdmin, async (req, res) => {
     }
   });
   
-    router.get('/patients', withAuthAdmin, async (req, res) => {
-      try {
-          const adminData = await Admin.findByPk(req.session.admin_id, {
-            attributes: {
-              exclude: ['email', 'password'],
-            },
-            include: [
-              {
-                model: Appointment,
-                include: {
-                  model: User,
-                    attributes: {
-                      exclude: ['email', 'password'],
-                    },
+router.get('/patients', withAuthAdmin, async (req, res) => {
+  try {
+      const adminData = await Admin.findByPk(req.session.admin_id, {
+        attributes: {
+          exclude: ['email', 'password'],
+        },
+        include: [
+          {
+            model: Appointment,
+            include: {
+              model: User,
+                attributes: {
+                  exclude: ['email', 'password'],
                 },
-              },
-            ],
-          });
-
-          res.render('admin-patients', {
-            layout: 'dashboard',
-            adminData,
-          });
-        } catch (err) {
-          res.status(500).json(err);
-        }
+            },
+          },
+        ],
       });
+
+      res.render('admin-patients', {
+        layout: 'dashboard',
+        adminData,
+      });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+  });
   
-
-
 module.exports = router;
