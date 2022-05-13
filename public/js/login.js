@@ -49,7 +49,7 @@ const adminFormHandler = async (event) => {
 };
 
 document
-  .querySelector('.login-form')
+  .querySelector('#patient-login')
   .addEventListener('submit', loginFormHandler);
 
 document
