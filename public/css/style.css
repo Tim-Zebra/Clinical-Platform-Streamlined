@@ -76,3 +76,78 @@ border-top: 1px;
 .adminappointment {
   margin-top: 10px;
 }
+
+.margin-left-user-main {
+  margin-left: 25%;
+}
+
+.margin-left {
+  margin-left: 28%
+}
+
+.margin-left-appt {
+  margin-left: 17%;
+}
+
+.margin-left-user-main-btn {
+  margin-left: 58%;
+}
+
+.margin-left-user-main-apptreq {
+  margin-left: 12%;
+}
+
+.margin-left-user-main-box {
+  margin-left: 10%;
+  width: 100%;
+}
+
+.login-forms-user-admin {
+  margin-left: 20%
+}
+
+.margin-left-admin-main-header {
+  margin-left: 10%;
+}
+
+.margin-left-admin-main-body {
+  margin-left: 40%;
+}
+
+.margin-left-admin-main-pts {
+  margin-left: 30%;
+  font-size: 20px;
+}
+
+.admin-patient-entire {
+  margin-left: 48%;
+}
+
+.admin-patient-header {
+  right: 200px;
+  position: relative;
+}
+
+.admin-patient-entire img {
+  margin-left: 20%;
+  height: 100px;
+  width: 100px;
+}
+
+.admin-patient-name {
+  margin-left: 13%;
+}
+
+.admin-patient-date {
+  right: 20px;
+  position: relative;
+}
+
+.margin-main-header {
+  margin-top: 3%;
+  margin-bottom: 9%;
+}
+.catinthehat {
+  margin-left: 20%;
+  margin-top: 1%;
+}
