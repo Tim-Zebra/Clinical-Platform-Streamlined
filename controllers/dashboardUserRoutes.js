@@ -27,6 +27,7 @@ try {
 
     const data = userData.get({ plain: true });
 
+    console.log(data);
     // Uncomment to see admin json response in Insomnia
     // res.json(userData);
 
@@ -35,7 +36,7 @@ try {
     res.render('user-main', {
       
       layout: 'userdash',
-      userData,
+      data,
 
     });
   } catch (err) {
