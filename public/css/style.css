@@ -4,7 +4,7 @@ header, .project:not(:last-child) {
 
 footer {
   /* Sends footer to the bottom and centers*/
-    position: absolute;
+  position: absolute;
   bottom: 0;
   width: 100%;
   text-align: center;
@@ -69,4 +69,8 @@ border-top: 1px;
 
 .adminappointment {
   margin-top: 10px;
+}
+
+#user {
+  font-weight: bold;
 }
