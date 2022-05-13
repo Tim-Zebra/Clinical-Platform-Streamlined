@@ -38,6 +38,7 @@ https://clinic-coders-office-solutions.herokuapp.com/
 * Appontment form inspired by https://form.taxi/en/sample-forms/appointment-request <br />
 * Profile and other cards card inspired by https://www.w3schools.com/bootstrap4/bootstrap_cards.asp and https://www.w3schools.com/w3css/w3css_cards.asp <br />
 * Dashboard inspired by https://getbootstrap.com/docs/5.1/examples/ <br />
+* Medication information obtained from https://reference.medscape.com/ <br />
 
 ## Development Process:
 1. Set up base files, created proposal, and wireframed <br />
