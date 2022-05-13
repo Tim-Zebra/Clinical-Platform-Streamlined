@@ -6,34 +6,30 @@
       style=""
     />
     <div class="container">
-      <h4><b>John Doe</b></h4>
-      <p>Age:</p>
-      <P>Weight:</P>
-      <p>Height:</p>
+      <h4>Welcome Back <b>{{data.name}}!</b></h4>
     </div>
   </div>
   <div class="dashboardbot">
   <form action="SEND ADDRESS" id="ft-form" method="POST" accept-charset="UTF-8" class="dog">
   <fieldset>
     <legend>Appointment request</legend>
-        <label>
-      Name:
-      <input type="text" name="name" id="name" required>
-    </label>
     <div class="two-cols">
       <label>
         Date:
         <input type="date" name="Appointment request" id="date" required>
       </label>
       <label for="">
-        Time:
-              <input type="time" id= "time"name="week" min="2018-W1" max="2018-W52">
+        Start Time:
+              <input type="time" id= "time2"name="week" min="2018-W1" max="2018-W52">
+      </label>
+            <label for="">
+        End Time:
+              <input type="time" id= "time3"name="week" min="2018-W1" max="2018-W52">
       </label>
       <label for="cars">Name of Patient</label>
 <select id="pname" name="cars">
   <option value="Roger">Roger</option>
   <option value="Zoot">Zoot</option>
-  <option value="Denis">Denis</option>
 </select>
 <label for="cars">Choose a Doctor:</label>
 <select id="dname" name="cars">

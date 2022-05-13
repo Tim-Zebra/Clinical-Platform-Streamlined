@@ -3,27 +3,21 @@ const loginFormHandler = async (event) => {
   
     // Collect values from the login form
    const date = document.querySelector('#date').value.trim();
-   const start_time = document.querySelector('#time').value.trim();
-   const end_time= start_time + 1 ;
+   const start_time = document.querySelector('#time2').value.trim();
+   const end_time= document.querySelector('#time3').value.trim();
    var pname = document.querySelector('#pname').value.trim();
    var dname = document.querySelector('#dname').value.trim();
 console.log (pname);
 
 if (pname === "Roger") {
-    user_id = 1;
-}
+    var user_id = 1;
+}   else {var user_id=2;}
 
-if (pname = "Zoot") {
-    user_id= 2;
-}
-else {user_id = 3};
 
-if (dname = "Arthur") {
-    admin_id = 1;
-} else {admin_id = 2};
+if (dname === "Arthur") {
+    var admin_id = 1;
+} else {var admin_id = 2};
 
-//    const user_id = 1;
-//    const admin_id = 1;
   
     if (date && user_id) {
       // Send a POST request to the API endpoint
