@@ -81,7 +81,6 @@ router.delete('/deleteAppt', async (req, res) => {
   try {
     const [affectedRows] = await Appointment.destroy({
       where: {
-        id: req.body.id,
       },
     });
 
