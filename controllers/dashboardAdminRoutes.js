@@ -58,7 +58,7 @@ try {
   }
 });
 
-router.get('/appointments', withAuthAdmin, async (req, res) => {
+router.get('/appointments', async (req, res) => {
   try {
       const adminData = await Admin.findByPk(req.session.admin_id, {
         attributes: {
@@ -79,7 +79,6 @@ router.get('/appointments', withAuthAdmin, async (req, res) => {
       });
 
       const data = adminData.get({ plain: true });
-
       res.render('admin-appointments', {
         layout: 'dashboard',
         data,

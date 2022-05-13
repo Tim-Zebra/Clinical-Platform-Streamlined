@@ -40,6 +40,8 @@ router.post('/login', async (req, res) => {
 
 // Add an appointment to the database
 router.post('/createAppt', withAuthUser, async (req, res) => {
+  console.log('\x1b[36m', '\n\n----------------This happended-------------------\n\n', req.body.date, '\x1b[37m');
+  
   try {
     const newAppt = await Appointment.create({
       date: req.body.date,
