@@ -26,7 +26,6 @@ try {
     });
 
     const data = adminData.get({ plain: true });
-console.log(data);
 
     // Uncomment to see admin json response in Insomnia
     // res.json(adminData);
@@ -72,7 +71,7 @@ router.get('/appointments', withAuthAdmin, async (req, res) => {
     }
   });
   
-router.get('/patients', withAuthAdmin, async (req, res) => {
+router.get('/patients', async (req, res) => {
   try {
       const adminData = await Admin.findByPk(1, {
         attributes: {
@@ -91,11 +90,19 @@ router.get('/patients', withAuthAdmin, async (req, res) => {
         ],
       });
 
-      console.log('\x1b[36m', '\n\n----------------This happended-------------------\n\n', adminData, '\x1b[37m');
+      const data = adminData.get({ plain: true });
+
+      // removes duplicate patients so that they don't appear twice
+      let filterPatients = [];
+      for (let k = 0; k < data.appointments.length; k++ ){
+        filterPatients.push(data.appointments[k].user.name);
+        // console.log('\x1b[36m', '\n\n----------------This happended-------------------\n\n', data.appointments[k].user.name, '\x1b[37m');
+      }
+      console.log('\x1b[36m', '\n\n----------------This happended-------------------\n\n', filterPatients, '\x1b[37m');
 
       res.render('admin-patients', {
         layout: 'dashboard',
-        adminData,
+        data,
       });
   } catch (err) {
     res.status(500).json(err);
