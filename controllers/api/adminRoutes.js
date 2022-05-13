@@ -4,6 +4,7 @@ const withAuthAdmin = require('../../utils/auth');
 
 // Routing end point "api/admin"
 
+// Admin login
 router.post('/login', async (req, res) => {
   try {
     const userData = await Admin.findOne({ where: { email: req.body.email } });

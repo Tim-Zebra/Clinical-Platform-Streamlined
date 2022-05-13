@@ -74,7 +74,7 @@ router.get('/appointments', withAuthAdmin, async (req, res) => {
   
 router.get('/patients', withAuthAdmin, async (req, res) => {
   try {
-      const adminData = await Admin.findByPk(req.session.admin_id, {
+      const adminData = await Admin.findByPk(1, {
         attributes: {
           exclude: ['email', 'password'],
         },
@@ -90,6 +90,8 @@ router.get('/patients', withAuthAdmin, async (req, res) => {
           },
         ],
       });
+
+      console.log('\x1b[36m', '\n\n----------------This happended-------------------\n\n', adminData, '\x1b[37m');
 
       res.render('admin-patients', {
         layout: 'dashboard',
