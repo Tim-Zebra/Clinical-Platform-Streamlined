@@ -1,17 +1,21 @@
 {{!-- This is our home page --}}
-        <h1>HEADER</h1>
-        <div class="row">
+        <div class="text-center timsBox">
+            <h1>Welcome to Arthur's Psychiatry!</h1>
+            <p>Please login to access your portal </p>
+        </div>
+        
+        <div class="d-flex align-items-center timsBox">
              {{!-- user login --}}
-            <div class="col-md-6">
-                <h2>Patient portal</h2>
+            <div class="col-6 timsBox">
+                <h2 class="text-center">Patient portal</h2>
                 <form class="form login-form">
                     <div class="form-group">
-                        <label for="email-login">email:</label>
-                        <input class="form-input" type="text" id="user-email-login" />
+                        <label class="d-block" for="email-login">email:</label>
+                        <input class="form-input d-block w-75" type="text" id="user-email-login" />
                     </div>
                     <div class="form-group">
-                        <label for="password-login">password:</label>
-                        <input class="form-input" type="password" id="user-password-login" />
+                        <label class="d-block" for="password-login">password:</label>
+                        <input class="form-input d-block w-75" type="password" id="user-password-login" />
                     </div>
                     <div class="form-group">
                         <button class="btn btn-primary" type="submit" id="user-button">login</button>
@@ -20,17 +24,17 @@
             </div>
 
             {{!-- admin login --}}
-            <div class="col-md-6">
-                <h2>Admin Portal</h2>
+            <div class="col-6 timsBox">
+                <h2 class="text-center">Admin Portal</h2>
 
                 <form class="form login-form cat">
                     <div class="form-group">
-                        <label for="email-login">email:</label>
-                        <input class="form-input" type="text" id="admin-email-login" />
+                        <label class="d-block" for="email-login">email:</label>
+                        <input class="form-input d-block w-75" type="text" id="admin-email-login" />
                     </div>
                     <div class="form-group">
-                        <label for="password-login">password:</label>
-                        <input class="form-input" type="password" id="admin-password-login" />
+                        <label class="d-block" for="password-login">password:</label>
+                        <input class="form-input d-block w-75" type="password" id="admin-password-login" />
                     </div>
                     <div class="form-group">
                         <button class="btn btn-primary" type="submit" id="admin-button">login</button>

@@ -11,6 +11,11 @@ footer {
   margin-bottom: 10px;
 }
 
+/* Sign out Button */
+#logout-btn:hover  {
+  cursor: pointer;
+}
+
 .no-button {
   background: none;
   border: none;

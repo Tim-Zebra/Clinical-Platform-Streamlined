@@ -5,6 +5,9 @@ const loginFormHandler = async (event) => {
   const email = document.querySelector('#user-email-login').value.trim();
   const password = document.querySelector('#user-password-login').value.trim();
 
+  console.log (email);
+  console.log (password);
+
   if (email && password) {
     // Send a POST request to the API endpoint
     const response = await fetch('/api/users/login', {
@@ -18,7 +21,7 @@ const loginFormHandler = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace('/dashboard/user');
     } else {
-      alert("Login not successful, plesese try again.");
+      alert("Login not succesful");
     }
   }
 };
@@ -29,6 +32,9 @@ const adminFormHandler = async (event) => {
   // Collect values from the login form
   const email = document.querySelector('#admin-email-login').value.trim();
   const password = document.querySelector('#admin-password-login').value.trim();
+
+  console.log (email);
+  console.log (password);
 
   if (email && password) {
     // Send a POST request to the API endpoint
@@ -43,7 +49,7 @@ const adminFormHandler = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace('/dashboard/admin');
     } else {
-      alert("Login not successful, plesese try again.");
+      alert("Wrong email or password!");
     }
   }
 };
