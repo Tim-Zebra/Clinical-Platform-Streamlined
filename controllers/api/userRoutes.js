@@ -3,6 +3,7 @@ const { User, Appointment, Admin } = require('../../models');
 var bcrypt = require('bcrypt');
 const withAuthUser = require('../../utils/auth');
 const helper = require('../../utils/helpers');
+
 // Routing end point "api/users"
 
 // User login
@@ -39,8 +40,6 @@ router.post('/login', async (req, res) => {
 
 // Add an appointment to the database
 router.post('/createAppt', async (req, res) => {
-  console.log('\x1b[36m', '\n\n----------------req BODY-------------------\n\n', req.body, '\x1b[37m');
-  // Actual code
   try {
     const newAppt = await Appointment.create({
       date: req.body.date,
@@ -59,12 +58,42 @@ router.post('/createAppt', async (req, res) => {
 });
 
 // Update an appointment in the database
+router.put('/updateAppt', async (req, res) => {
+  try {
+    const [affectedRows] = await Appointment.update(req.body, {
+      where: {
+        id: req.body.id,
+      },
+    });
 
+    if (affectedRows > 0) {
+      res.status(200).end();
+    } else {
+      res.status(404).end();
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // Delete and appointment in the database
+router.delete('/deleteAppt', async (req, res) => {
+  try {
+    const [affectedRows] = await Appointment.destroy({
+      where: {
+        id: req.body.id,
+      },
+    });
 
-
-
+    if (affectedRows > 0) {
+      res.status(200).end();
+    } else {
+      res.status(404).end();
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // Can re-enable if landing page changes. Currently landing pages destroys session
 // router.post('/logout', (req, res) => {

@@ -1,10 +1,12 @@
 
 
 <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 align-items-right cat">
-<h1>Current List of Scheduled Patients:</h1>
+<h1 class="patienthead">Current List of Scheduled Patients:</h1>
+
+<div class="patients">
   {{#each data.appointments as |patient|}}
 
-<div class="w3-card-4">
+<div class="w3-card-4 patientbox">
   <img src="https://imgur.com/4M5LpBs.png" alt="Alps">
   <div class="w3-container w3-center">
     <p>Patient Name: {{patient.user.name}}</p>
@@ -12,4 +14,5 @@
   </div>
 
    {{/each}}
+   </div>
    </div>
