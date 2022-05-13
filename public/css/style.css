@@ -118,3 +118,18 @@ border-top: 1px;
   margin-left: 30%;
   font-size: 20px;
 }
+
+.admin-patient-entire {
+  margin-left: 48%;
+}
+
+.admin-patient-header {
+  right: 200px;
+  position: relative;
+}
+
+.admin-patient-entire img {
+  margin-left: 20%;
+  height: 100px;
+  width: 100px;
+}
