@@ -4,6 +4,8 @@ const Appointment = require('./Appointment');
 // const Pharma = require('./Pharma');
 // const Scheduler = require('./Scheduler');
 const User = require('./User');
+const Pharma = require('./Pharma');
+// const Class = require('./Class');
 
 // Links users with appointment
 Appointment.belongsTo(User, {
@@ -43,8 +45,7 @@ User.belongsToMany(Admin, {
 module.exports = { 
   Admin,
   Appointment,
-  // Category,
-  // Pharma,
+  // Class,
+  Pharma,
   // Scheduler,
   User};
-
