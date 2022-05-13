@@ -36,6 +36,7 @@ if (dname === "Arthur") {
     }
   };
 
+
   document
   .querySelector('.dog')
   .addEventListener('submit', loginFormHandler);

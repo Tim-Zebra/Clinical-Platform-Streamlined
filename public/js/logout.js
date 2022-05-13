@@ -2,5 +2,5 @@
 const logout = async () => document.location.replace('/');
 
 document
-  .getElementById('logout-btn')
+  .querySelector(".logout-btn")
   .addEventListener('click', logout);
