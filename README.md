@@ -1,4 +1,4 @@
-# Clinical Platform for Small Practices
+# Clinical Platform Streamlined
 
 ## Description
 A straight forward and user friendly web application that helps small medical practices organize their appointments. As an example, a small psychiatry practice is being used.<br /> <br />
@@ -6,16 +6,20 @@ A straight forward and user friendly web application that helps small medical pr
 
  ## Table of Contents:
 
-  **[How to Use](#how-to-use)** <br />
+  **[Technology Used](#technologies-used)** <br />
   **[Application Demos](#application-demos)** <br />
   **[Link to Deployed Page](#link-to-deployed-page)** <br />
   **[References](#references)** <br />
   **[Devlopment Process](#development-process)** <br />
   **[Author](#author)** <br />
 
-## How to Use:
-* Login to the portal using either user or admin, depending on your credentials, to see your dashboard <br />
-* For users: select appointments tab to add, edit, or delete your appointments
+## Technologies Used:
+* Handlebars <br />
+* Bootstrap <br />
+* Express.js, Node.js, and Moment.js <br />
+* bcrypt, dotenv, mysql2, and sequelize <br />
+* 
+* GitHub, Heroku, SQL, SQL Workbench, JawsDB, Slack, Discord, Chrome, Chrome Dev Tools <br />
 
 ## Application Demos:
 <p align="center">
