@@ -105,3 +105,16 @@ border-top: 1px;
 .login-forms-user-admin {
   margin-left: 20%
 }
+
+.margin-left-admin-main-header {
+  margin-left: 10%;
+}
+
+.margin-left-admin-main-body {
+  margin-left: 39%;
+}
+
+.margin-left-admin-main-pts {
+  margin-left: 32%;
+  font-size: 20px;
+}

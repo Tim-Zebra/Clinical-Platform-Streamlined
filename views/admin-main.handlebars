@@ -1,26 +1,18 @@
-<div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 align-items-right margin-left">
+<div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 align-items-right margin-left-admin-main-header">
   <div class="dashboardtop">
-    <div class="container">
-      <h4>Currently Signed in: <b>{{data.name}}</b></h4>
-        <h4>Role:<b> {{data.title}}</b></h4>
+    <div class="container text-center">
+      <h4>Welcome Back <b>{{data.name}}!</b></h4>
+        <h4>Title: <b> {{data.title}}</b></h4>
     </div>
   </div>
-  <div class="dashboardbot">
+  <div class="dashboardbot margin-left-admin-main-body">
     <div>
       <h1>List of patients</h1>
       <ul>
     {{#each data.appointments as |appointment|}}
-        <li>{{user.name}}</li>
+        <li class="margin-left-admin-main-pts">{{user.name}}</li>
           {{/each}}
       </ul>
     </div>
-    <div class="dashboardappointments">
-      <h1>Appointments
-      </h1>
-      <ul>
-        <li>Josh</li>
-        <li>Alex</li>
-        <li>Brent</li>
-      </ul></div>
   </div>
 </div>

@@ -6,9 +6,6 @@ const userFormHandler = async (event) => {
   const email = document.querySelector('#user-email-login').value.trim();
   const password = document.querySelector('#user-password-login').value.trim();
 
-  console.log (email);
-  console.log (password);
-
   if (email && password) {
     // Send a POST request to the API endpoint
     const response = await fetch('/api/users/login', {
@@ -35,9 +32,6 @@ const adminFormHandler = async (event) => {
   const email = document.querySelector('#admin-email-login').value.trim();
   const password = document.querySelector('#admin-password-login').value.trim();
 
-  console.log (email);
-  console.log (password);
-
   if (email && password) {
     // Send a POST request to the API endpoint
     const response = await fetch('/api/admin/login', {
@@ -61,7 +55,7 @@ document
   .addEventListener('submit', userFormHandler);
 
 document
-  .querySelector('.login-form-user')
+  .querySelector('.login-form-admin')
   .addEventListener('submit', adminFormHandler);
 
 
