@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Admin, Appointment } = require('../models/');
+const { Pharma,User, Admin, Appointment } = require('../models/');
 const { withAuthUser } = require('../utils/auth');
 
 // The `/dashboard/user` endpoint
@@ -76,4 +76,43 @@ router.get('/appointments', withAuthUser, async (req, res) => {
     }
   });
 
+  router.get('/Prescriptions', withAuthUser, async (req, res) => {
+    try {
+        const adminData = await Pharma.findByPk(1, {});
+        const adminData1 = await Pharma.findByPk(2, {});
+        const adminData2 = await Pharma.findByPk(3, {});
+        const adminData3= await Pharma.findByPk(4, {});
+  
+        const data = adminData.get({ plain: true });
+        const data1 = adminData1.get({ plain: true });
+        const data2 = adminData2.get({ plain: true });
+        const data3 = adminData3.get({ plain: true });
+        console.log (data1)
+        console.log (data2)
+        console.log (data3)
+        console.log (data)
+  
+        res.render('pharma-prod', {
+          layout: 'userdash',
+          data,
+          data1,
+          data2,
+          data3
+        });
+      } catch (err) {
+        res.status(500).json(err);
+      }
+    });
+
 module.exports = router;
+
+router.get('/accountsummary', withAuthUser, async (req, res) => {
+  try {
+
+      res.render('user-acctsummary', {
+        layout: 'userdash',
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
