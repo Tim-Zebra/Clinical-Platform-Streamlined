@@ -73,7 +73,7 @@ router.get('/appointments', withAuthAdmin, async (req, res) => {
   
 router.get('/patients', async (req, res) => {
   try {
-      const adminData = await Admin.findByPk(1, {
+      const adminData = await Admin.findByPk(req.session.admin_id, {
         attributes: {
           exclude: ['email', 'password'],
         },
@@ -92,17 +92,26 @@ router.get('/patients', async (req, res) => {
 
       const data = adminData.get({ plain: true });
 
-      // removes duplicate patients so that they don't appear twice
-      let filterPatients = [];
-      for (let k = 0; k < data.appointments.length; k++ ){
-        filterPatients.push(data.appointments[k].user.name);
-        // console.log('\x1b[36m', '\n\n----------------This happended-------------------\n\n', data.appointments[k].user.name, '\x1b[37m');
+      // removes duplicate patients and places each patient into an array
+      let filteredPatients = [data.appointments[0].user.name];
+      for(let k = 1; k < data.appointments.length; k++ ){
+        let duplicate = false;
+
+        for(let i = 0; i < filteredPatients.length; i++) {
+          if (filteredPatients[i] === data.appointments[k].user.name) {
+            duplicate = true;
+          }
+        }
+        
+        if(duplicate === false) {
+          filteredPatients.push(data.appointments[k].user.name);
+        }
       }
-      console.log('\x1b[36m', '\n\n----------------This happended-------------------\n\n', filterPatients, '\x1b[37m');
 
       res.render('admin-patients', {
         layout: 'dashboard',
         data,
+        filteredPatients
       });
   } catch (err) {
     res.status(500).json(err);
