@@ -18,14 +18,16 @@ A straight forward and user friendly web application that helps small medical pr
 * Bootstrap <br />
 * Express.js, Node.js, and Moment.js <br />
 * bcrypt, dotenv, mysql2, and sequelize <br />
-* 
 * GitHub, Heroku, SQL, SQL Workbench, JawsDB, Slack, Discord, Chrome, Chrome Dev Tools <br />
 
 ## Application Demos:
 <p align="center">
-<img src="./demos/.png" alt="drawing" width="600" height="auto"/> <br />
-<img src="./demos/.gif" alt="drawing" width="600" height="auto"/> <br /><br />
-<font size="4"><a href="">Video Demo</a></font> 
+<img src="./demos/loginPage.png" alt="drawing" width="600" height="auto"/> <br />
+<img src="./demos/userDshbrd.png" alt="drawing" width="600" height="auto"/> <br />
+<img src="./demos/userAppt.png" alt="drawing" width="600" height="auto"/> <br />
+<img src="./demos/adminDshbrd.png" alt="drawing" width="600" height="auto"/> <br />
+<img src="./demos/adminAppt.png" alt="drawing" width="600" height="auto"/> <br />
+<img src="./demos/adminPts.png" alt="drawing" width="600" height="auto"/> <br />
 </p>
 
 ## Link to Deployed Page:
