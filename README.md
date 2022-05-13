@@ -34,8 +34,11 @@ A straight forward and user friendly web application that helps small medical pr
 https://clinic-coders-office-solutions.herokuapp.com/
 
 ## References:
-* Patient picture obtained from WandererCreative hosted by Pixabay
-* 
+* Patient picture obtained from WandererCreative hosted by Pixabay <br />
+* Appontment form inspired by https://form.taxi/en/sample-forms/appointment-request <br />
+* Profile and other cards card inspired by https://www.w3schools.com/bootstrap4/bootstrap_cards.asp and https://www.w3schools.com/w3css/w3css_cards.asp <br />
+* Dashboard inspired by https://getbootstrap.com/docs/5.1/examples/ <br />
+* Medication information obtained from https://reference.medscape.com/ <br />
 
 ## Development Process:
 1. Set up base files, created proposal, and wireframed <br />
@@ -46,7 +49,7 @@ https://clinic-coders-office-solutions.herokuapp.com/
 6. Created back end database, server, and routes <br />
 7. Created front end handlebars and CSS <br />
 8. Set up server with database <br />
-9. Tied in front in and backend <br />
+9. Tied in front end and back end <br />
 10. Implemented optional enchancements <br />
 11. See commits for more details <br />
 
