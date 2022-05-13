@@ -1,9 +1,88 @@
 [
     {
-    "pharma_name":, 
-     "brand_name":,
-    "description":,
-    "side_effects":,
-    "stock":,
+    "id": "1", 
+    "pharma_name": "Citalopram", 
+    "brand_name": "Celexa",
+    "class": "SSRI's",
+    "side_effects": "Dry Mouth (20%), Nausea (21%), Somnolence (18%)",
+    "stock": 10
+    },
+    {
+    "id": "2", 
+    "brand_name": "Lexapro",
+    "class": "SSRI's",
+    "side_effects": "Headache (24%), Nausea (15-18%), Insomnia (7-14%)",
+    "stock": 10
+    },
+    {
+        "id": "3", 
+    "pharma_name": "Fluoxetine", 
+    "brand_name": "Prozac",
+    "class": "SSRI's",
+    "side_effects": "Insomnia (10-33%), Nausea (12-29%), Headache (20-25%)",
+    "stock": 10
+    },
+    {
+        "id": "4", 
+    "pharma_name": "Lamotrigine", 
+    "brand_name": "Lamictal",
+    "class": "Mood Stabilizers",
+    "side_effects": "Dizziness (38%), Diplopia (26-30%), Headache (29%)",
+    "stock": 10
+    },
+    {
+    "id": "5", 
+    "brand_name": "Latuda",
+    "class": "Mood Stabilizers",
+    "side_effects": "Somnolence, dose related (15-26%), Akathisia, dose related (6-22%), Extrapyramidal disorder, dose related (6-22%)",
+    "stock": 10
+    },
+    {
+        "id": "6", 
+    "pharma_name": "Lithium", 
+    "brand_name": "Luthobid",
+    "class": "Mood Stabilizers",
+    "side_effects": "Leukocytosis (most patients), Polyuria/polydypsia (30-50%), Dry mouth (20-50%)",
+    "stock": 10
+    },
+    {
+        "id": "7", 
+    "pharma_name": "Aripiprazole", 
+    "brand_name": "Abilify",
+    "class": "Antipsychotics (Gen II)",
+    "side_effects": "Weight gain (8-30%), Headache (27%), Agitation (19%)",
+    "stock": 10
+    },
+    {
+        "id": "8", 
+    "pharma_name": "Quetiapine", 
+    "brand_name": "Seroquel",
+    "class": "Antipsychotics (Gen II)",
+    "side_effects": "Dizziness (1-18%), Fatigue (3-14%), Extrapyramidal symptoms (1-13%)",
+    "stock": 10
+    },
+    {
+        "id": "9", 
+    "pharma_name": "Olanzapine", 
+    "brand_name": "Zyprexa",
+    "class": "Antipsychotics (Gen II)",
+    "side_effects": "Orthostatic hypotension (≥20%), Weight gain, dose dependent (5-40%), Hypertriglyceridemia (≤39%)",
+    "stock": 10
+    },
+    {
+        "id": "11", 
+    "pharma_name": "Alprazolam", 
+    "brand_name": "Xanax",
+    "class": "Benzodiazapines",
+    "side_effects": "Drowsiness (41%), Depression (10-15%), Headache (10-15%)",
+    "stock": 10
+    },
+    {
+        "id": "12", 
+    "pharma_name": "Lorazepam", 
+    "brand_name": "Ativan",
+    "class": "Benzodiazapines",
+    "side_effects": "Sedation (15.9%), Dizziness (6.9%), Weakness (4.2%)",
+    "stock": 10
     }
 ]

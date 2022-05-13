@@ -7,9 +7,7 @@ Pharma.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
     },
     pharma_name: {
       type: DataTypes.STRING,
@@ -19,7 +17,7 @@ Pharma.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    class: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -29,15 +27,15 @@ Pharma.init(
     },
     stock: {
       type: DataTypes.INTEGER,
-      defaultValue: 25,
+      // defaultValue: 25,
       allowNull: false,
       validate: {
         isNumeric: true
-      },
-      References: {
-        model: "category",
-        key: "id"
       }
+      // References: {
+      //   model: "category",
+      //   key: "id"
+      // }
     }
   },
   {

@@ -76,4 +76,35 @@ router.get('/appointments', withAuthUser, async (req, res) => {
     }
   });
 
+  router.get('/prescriptions', withAuthUser, async (req, res) => {
+    try {
+        const adminData = await User.findByPk(1, {
+          attributes: {
+            exclude: ['email', 'password'],
+          },
+          // include: [
+          //   {
+          //     model: Appointment,
+          //     order: [['updatedAt', 'DESC']],
+          //     include: {
+          //       model: Admin,
+          //         attributes: {
+          //           exclude: ['email', 'password'],
+          //         },
+          //     },
+          //   },
+          // ],
+        });
+  
+        const data = adminData.get({ plain: true });
+  
+        res.render('pharma-prod', {
+          layout: 'userdash',
+          data,
+        });
+      } catch (err) {
+        res.status(500).json(err);
+      }
+    });
+
 module.exports = router;
