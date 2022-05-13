@@ -7,7 +7,6 @@ const loginFormHandler = async (event) => {
    const end_time= document.querySelector('#time3').value.trim();
    var pname = document.querySelector('#pname').value.trim();
    var dname = document.querySelector('#dname').value.trim();
-console.log (pname);
 
 if (pname === "Roger") {
     var user_id = 1;
