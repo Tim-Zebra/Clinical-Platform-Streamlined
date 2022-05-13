@@ -16,6 +16,10 @@ footer {
   cursor: pointer;
 }
 
+.cat {
+  margin-left: 17%;
+}
+
 .no-button {
   background: none;
   border: none;
