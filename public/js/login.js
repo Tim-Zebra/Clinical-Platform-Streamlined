@@ -1,12 +1,10 @@
-const loginFormHandler = async (event) => {
+// Form for user login
+const userFormHandler = async (event) => {
   event.preventDefault();
 
   // Collect values from the login form
   const email = document.querySelector('#user-email-login').value.trim();
   const password = document.querySelector('#user-password-login').value.trim();
-
-  console.log (email);
-  console.log (password);
 
   if (email && password) {
     // Send a POST request to the API endpoint
@@ -26,15 +24,13 @@ const loginFormHandler = async (event) => {
   }
 };
 
+// Form for admin login
 const adminFormHandler = async (event) => {
   event.preventDefault();
 
   // Collect values from the login form
   const email = document.querySelector('#admin-email-login').value.trim();
   const password = document.querySelector('#admin-password-login').value.trim();
-
-  console.log (email);
-  console.log (password);
 
   if (email && password) {
     // Send a POST request to the API endpoint
@@ -55,11 +51,11 @@ const adminFormHandler = async (event) => {
 };
 
 document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginFormHandler);
+  .querySelector('.login-form-user')
+  .addEventListener('submit', userFormHandler);
 
 document
-  .querySelector('.cat')
+  .querySelector('.login-form-admin')
   .addEventListener('submit', adminFormHandler);
 
 

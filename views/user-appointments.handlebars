@@ -1,4 +1,4 @@
-<div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 align-items-right cat">
+<div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 align-items-right margin-left-appt">
   <h4 class="rach">Upcoming Appointments:</h4>
 
   {{#each data.appointments as |appointment|}}
@@ -6,8 +6,7 @@
       <div class="container">
         <h4>Doctor: {{appointment.admin.name}}</h4>
         <p>Date: {{appointment.date}}</p>
-           <p> Time:{{format_time start_time}}-{{format_time end_time}}</p>
-     
+           <p> Time: {{format_time start_time}}-{{format_time end_time}}</p>
       </div>
     </div>
   {{/each}}
