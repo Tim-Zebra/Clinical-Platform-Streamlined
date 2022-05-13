@@ -5,7 +5,7 @@ const { withAuthUser } = require('../utils/auth');
 // The `/dashboard/user` endpoint
 
 // Gets user info
-router.get('/', withAuthUser, async (req, res) => {
+router.get('/', async (req, res) => {
 // gets all associated appointment times, and the associated admins with those times
 try {
     const userData = await User.findByPk(req.session.user_id, {
@@ -44,7 +44,7 @@ try {
 });
 
 // user schedule route
-router.get('/appointments', withAuthUser, async (req, res) => {
+router.get('/appointments', async (req, res) => {
   try {
       const adminData = await User.findByPk(req.session.user_id, {
         attributes: {

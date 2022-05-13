@@ -5,7 +5,7 @@ const { withAuthAdmin } = require('../utils/auth');
 // The `/dashboard/admin` endpoint
 
 // Routes to admin at specific ID
-router.get('/', withAuthAdmin, async (req, res) => {
+router.get('/', async (req, res) => {
 // gets all associated appointment times, and the associated users with those times
 try {
     const adminData = await Admin.findByPk(req.session.admin_id, {
@@ -41,7 +41,7 @@ try {
   }
 });
 
-router.get('/appointments', withAuthAdmin, async (req, res) => {
+router.get('/appointments', async (req, res) => {
   try {
       const adminData = await Admin.findByPk(req.session.admin_id, {
         attributes: {
