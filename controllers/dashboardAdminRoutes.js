@@ -28,6 +28,21 @@ try {
 
     const data = adminData.get({ plain: true });
 
+    let filteredPatients = [data.appointments[0].user.name];
+    for(let k = 1; k < data.appointments.length; k++ ){
+      let duplicate = false;
+
+      for(let i = 0; i < filteredPatients.length; i++) {
+        if (filteredPatients[i] === data.appointments[k].user.name) {
+          duplicate = true;
+        }
+      }
+      
+      if(duplicate === false) {
+        filteredPatients.push(data.appointments[k].user.name);
+      }
+    }
+
     // Uncomment to see admin json response in Insomnia
     // res.json(adminData);
 
@@ -36,6 +51,7 @@ try {
     res.render('admin-main', {
       layout: 'dashboard',
       data,
+      filteredPatients,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -114,7 +130,7 @@ router.get('/patients', withAuthAdmin, async (req, res) => {
       res.render('admin-patients', {
         layout: 'dashboard',
         data,
-        filteredPatients
+        filteredPatients,
       });
   } catch (err) {
     res.status(500).json(err);

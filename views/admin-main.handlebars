@@ -7,10 +7,10 @@
   </div>
   <div class="dashboardbot margin-left-admin-main-body">
     <div>
-      <h1>List of patients</h1>
+      <h1>Your Patients</h1>
       <ul>
-    {{#each data.appointments as |appointment|}}
-        <li class="margin-left-admin-main-pts">{{user.name}}</li>
+    {{#each filteredPatients as |patient|}}
+        <li class="margin-left-admin-main-pts">{{patient}}</li>
           {{/each}}
       </ul>
     </div>
