@@ -38,5 +38,5 @@ if (dname === "Arthur") {
 
 
   document
-  .querySelector('.dog')
+  .querySelector('.margin-left-user-main-btn')
   .addEventListener('submit', loginFormHandler);
