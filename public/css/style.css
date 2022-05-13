@@ -133,3 +133,12 @@ border-top: 1px;
   height: 100px;
   width: 100px;
 }
+
+.admin-patient-name {
+  margin-left: 13%;
+}
+
+.admin-patient-date {
+  right: 20px;
+  position: relative;
+}
