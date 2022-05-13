@@ -34,7 +34,7 @@ A straight forward and user friendly web application that helps small medical pr
 https://clinic-coders-office-solutions.herokuapp.com/
 
 ## References:
-* 
+* Patient picture obtained from WandererCreative hosted by Pixabay
 * 
 
 ## Development Process:
