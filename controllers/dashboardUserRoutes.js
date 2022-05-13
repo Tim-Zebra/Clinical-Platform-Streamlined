@@ -15,6 +15,7 @@ try {
       include: [
         {
           model: Appointment,
+          order: [['updatedAt', 'DESC']],
           include: {
             model: Admin,
               attributes: {
@@ -46,13 +47,14 @@ try {
 // user schedule route
 router.get('/appointments', async (req, res) => {
   try {
-      const adminData = await User.findByPk(req.session.user_id, {
+      const adminData = await User.findByPk(1, {
         attributes: {
           exclude: ['email', 'password'],
         },
         include: [
           {
             model: Appointment,
+            order: [['updatedAt', 'DESC']],
             include: {
               model: Admin,
                 attributes: {
@@ -64,7 +66,7 @@ router.get('/appointments', async (req, res) => {
       });
 
       const data = adminData.get({ plain: true });
-      
+
       res.render('user-appointments', {
         layout: 'userdash',
         data,

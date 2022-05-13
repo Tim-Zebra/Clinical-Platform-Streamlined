@@ -15,6 +15,7 @@ try {
       include: [
         {
           model: Appointment,
+          order: [['updatedAt', 'DESC']],
           include: {
             model: User,
               attributes: {
@@ -50,6 +51,7 @@ router.get('/appointments', async (req, res) => {
         include: [
           {
             model: Appointment,
+            order: [['updatedAt', 'DESC']],
             include: {
               model: User,
                 attributes: {
@@ -80,6 +82,7 @@ router.get('/patients', async (req, res) => {
         include: [
           {
             model: Appointment,
+            order: [['updatedAt', 'DESC']],
             include: {
               model: User,
                 attributes: {
