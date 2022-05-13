@@ -1,4 +1,5 @@
-const loginFormHandler = async (event) => {
+// Form for user login
+const userFormHandler = async (event) => {
   event.preventDefault();
 
   // Collect values from the login form
@@ -18,11 +19,12 @@ const loginFormHandler = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace('/dashboard/user');
     } else {
-      alert("Login not successful, plesese try again.");
+      alert("Login not succesful");
     }
   }
 };
 
+// Form for admin login
 const adminFormHandler = async (event) => {
   event.preventDefault();
 
@@ -43,17 +45,17 @@ const adminFormHandler = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace('/dashboard/admin');
     } else {
-      alert("Login not successful, plesese try again.");
+      alert("Wrong email or password!");
     }
   }
 };
 
 document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginFormHandler);
+  .querySelector('.login-form-user')
+  .addEventListener('submit', userFormHandler);
 
 document
-  .querySelector('.cat')
+  .querySelector('.login-form-admin')
   .addEventListener('submit', adminFormHandler);
 
 

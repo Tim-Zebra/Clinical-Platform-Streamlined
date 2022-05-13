@@ -11,6 +11,12 @@ footer {
   margin-bottom: 10px;
 }
 
+/* Sign out Button */
+.logout-btn:hover  {
+  cursor: pointer;
+}
+
+
 .no-button {
   background: none;
   border: none;
@@ -69,8 +75,4 @@ border-top: 1px;
 
 .adminappointment {
   margin-top: 10px;
-}
-
-#user {
-  font-weight: bold;
 }

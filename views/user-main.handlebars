@@ -1,113 +1,40 @@
-<div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 align-items-right cat">
-  <div class="dashboardtop">
-    <img
-      src="//www.html.am/images/samples/remarkables_queenstown_new_zealand-300x225.jpg"
-      alt="Avatar"
-      style=""
-    />
-    <div id= "user" class="container">
-      <h4><b>John Doe</b></h4>
-      <p>Age:</p>
-      <P>Weight:</P>
-      <p>Height:</p>
+ <fieldset>
+    <legend class="margin-left-user-main-apptreq">Appointment request</legend>
+    <div class="two-cols margin-left-user-main-box">
+      <label>
+        Date:
+        <input type="date" name="Appointment request" id="date" required>
+      </label>
+      <label for="">
+        Start Time:
+              <input type="time" id= "time2"name="week" min="2018-W1" max="2018-W52">
+      </label>
+            <label for="">
+        End Time:
+              <input type="time" id= "time3"name="week" min="2018-W1" max="2018-W52">
+      </label>
+<label for="cars">Choose a Doctor:</label>
+<select id="dname" name="cars">
+  <option value="Arthur">Arthur</option>
+  <option value="Lance">Lance</option>
+</select>
     </div>
-  </div>
-  <div class="dashboardbot">
-    <div>
-      <h1>Schedule an appointment!</h1>
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">Doctor</label>
-        <input class="form-input" type="text" id="doctor" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">Date</label>
-        <input class="form-input" type="password" id="date" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-  <form action="SEND ADDRESS" id="ft-form" method="POST" accept-charset="UTF-8">
-  <fieldset>
-    <legend>For person</legend>
-    <label>
-      Name
-      <input type="text" name="name" required>
-    </label>
-    <div class="two-cols">
-      <label>
-        Email address
-        <input type="email" name="email" required>
-      </label>
-      <label>
-        Phone number
-        <input type="tel" name="phone">
-      </label>
     </div>
   </fieldset>
-  <fieldset>
-    <legend>Appointment request</legend>
-    <div class="two-cols">
-      <label>
-        Date
-        <input type="date" name="Appointment request" required>
-      </label>
-      <div class="inline">
-        <label>
-          <input type="hidden" name="Morning desired" value="no">
-          <input type="checkbox" name="Morning desired" value="yes">
-          Morning
-        </label>
-        <label>
-          <input type="hidden" name="Afternoon desired" value="no">
-          <input type="checkbox" name="Afternoon desired" value="yes">
-          Afternoon
-        </label>
-      </div>
-    </div>
-    <p>Confirmation requested by</p>
-    <div class="inline">
-      <label>
-        <input type="radio" name="Confirmation requested by" value="email" checked>
-        Email
-      </label>
-      <label>
-        <input type="radio" name="Confirmation requested by" value="phone">
-        Phone call
-      </label>
-    </div>
-  </fieldset>
-  <div class="btns">
-    <input type="text" name="_gotcha" value="" style="display:none;">
+  
+  <div class="btns margin-left-user-main-btn">
+    <input type="text" name="_gotcha" value="margin-left-user-main" style="display:none;">
     <input type="submit" value="Submit request">
   </div>
-  </form>
-   {{!-- <div>
-      <h1>Schedule an appointment!</h1>
+</form>
 
-      <form class="form login-form cat">
-        <div class="form-group">
-          <label for="email-login">Doctor</label>
-          <input class="form-input" type="text" id="doctor" />
-        </div>
-        <div class="form-group">
-          <label for="password-login">Date</label>
-          <input class="form-input" type="password" id="date" />
-        </div>
-        <div class="form-group">
-          <button class="btn btn-primary" type="submit">login</button>
-        </div>
-      </form>
-    </div> --}}
+          </div>
+      </div>
+    </body>
+       <script src="/js/user-main.js"></script>
+  </main>
 
-    <div class="dashboardappointments">
-      <h1>Medications
-      </h1>
-      <ul>
-        <li>Josh</li>
-        <li>Alex</li>
-        <li>Brent</li>
-      </ul></div>
-  </div>
-</div>
+  <script src="/js/logout.js"></script>
+
+
+</html>

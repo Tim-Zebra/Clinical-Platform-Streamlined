@@ -15,6 +15,7 @@ try {
       include: [
         {
           model: Appointment,
+          order: [['updatedAt', 'DESC']],
           include: {
             model: User,
               attributes: {
@@ -26,7 +27,21 @@ try {
     });
 
     const data = adminData.get({ plain: true });
-console.log(data);
+
+    let filteredPatients = [data.appointments[0].user.name];
+    for(let k = 1; k < data.appointments.length; k++ ){
+      let duplicate = false;
+
+      for(let i = 0; i < filteredPatients.length; i++) {
+        if (filteredPatients[i] === data.appointments[k].user.name) {
+          duplicate = true;
+        }
+      }
+      
+      if(duplicate === false) {
+        filteredPatients.push(data.appointments[k].user.name);
+      }
+    }
 
     // Uncomment to see admin json response in Insomnia
     // res.json(adminData);
@@ -36,13 +51,14 @@ console.log(data);
     res.render('admin-main', {
       layout: 'dashboard',
       data,
+      filteredPatients,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/appointments', withAuthAdmin, async (req, res) => {
+router.get('/appointments', async (req, res) => {
   try {
       const adminData = await Admin.findByPk(req.session.admin_id, {
         attributes: {
@@ -51,6 +67,7 @@ router.get('/appointments', withAuthAdmin, async (req, res) => {
         include: [
           {
             model: Appointment,
+            order: [['updatedAt', 'DESC']],
             include: {
               model: User,
                 attributes: {
@@ -62,7 +79,6 @@ router.get('/appointments', withAuthAdmin, async (req, res) => {
       });
 
       const data = adminData.get({ plain: true });
-
       res.render('admin-appointments', {
         layout: 'dashboard',
         data,
@@ -81,6 +97,7 @@ router.get('/patients', withAuthAdmin, async (req, res) => {
         include: [
           {
             model: Appointment,
+            order: [['updatedAt', 'DESC']],
             include: {
               model: User,
                 attributes: {
@@ -91,9 +108,28 @@ router.get('/patients', withAuthAdmin, async (req, res) => {
         ],
       });
 
+      const data = adminData.get({ plain: true });
+
+      // removes duplicate patients and places each patient into an array
+      let filteredPatients = [data.appointments[0].user.name];
+      for(let k = 1; k < data.appointments.length; k++ ){
+        let duplicate = false;
+
+        for(let i = 0; i < filteredPatients.length; i++) {
+          if (filteredPatients[i] === data.appointments[k].user.name) {
+            duplicate = true;
+          }
+        }
+        
+        if(duplicate === false) {
+          filteredPatients.push(data.appointments[k].user.name);
+        }
+      }
+
       res.render('admin-patients', {
         layout: 'dashboard',
-        adminData,
+        data,
+        filteredPatients,
       });
   } catch (err) {
     res.status(500).json(err);

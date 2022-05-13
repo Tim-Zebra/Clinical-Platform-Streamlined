@@ -1,14 +1,9 @@
-{{! TODO }}
-{{! CSS NOT DONE. May need to remove all class variables. Maybe some id's as well }}
-
-{{! Main dashboard page that will be the base for both admin and user }}
-
 <html lang="en">
 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Psy MD. Dashboard</title>
+    <title>Admin Dashboard</title>
     <link
       rel="canonical"
       href="https://getbootstrap.com/docs/5.1/examples/dashboard/"/>
@@ -22,12 +17,11 @@
     <header
       class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"
     >
-      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Clinical
-        Coders</a>
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/dashboard/admin/">Logged in as: {{data.name}}</a>
 
       <div class="navbar-nav">
         <div class="nav-item text-nowrap">
-          <a class="nav-link px-3" href="#">Sign out</a>
+          <a class="nav-link px-3 logout-btn">Sign out</a>
         </div>
       </div>
     </header>
@@ -82,5 +76,7 @@
   </main>
 
   <script src="/js/logout.js"></script>
+
+  <script src="/js/user-main.js"></script>
 
 </html>
